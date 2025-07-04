@@ -1,0 +1,13 @@
+{
+  "itemGroup.expandedflowers": "Example Mod Tab",
+  "block.expandedflowers.example_block": "Example Block",
+  "item.expandedflowers.example_item": "Example Item",
+
+  "expandedflowers.configuration.title": "Expanded Flowers Configs",
+  "expandedflowers.configuration.section.expandedflowers.common.toml": "Expanded Flowers Configs",
+  "expandedflowers.configuration.section.expandedflowers.common.toml.title": "Expanded Flowers Configs",
+  "expandedflowers.configuration.items": "Item List",
+  "expandedflowers.configuration.logDirtBlock": "Log Dirt Block",
+  "expandedflowers.configuration.magicNumberIntroduction": "Magic Number Text",
+  "expandedflowers.configuration.magicNumber": "Magic Number"
+}
