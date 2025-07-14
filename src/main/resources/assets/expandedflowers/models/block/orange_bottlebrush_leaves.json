@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "expandedflowers:block/bottlebrush_leaves_end",
+    "side": "expandedflowers:block/orange_bottlebrush"
+  }
+}

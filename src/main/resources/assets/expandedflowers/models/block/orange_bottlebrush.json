@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "expandedflowers:block/orange_bottlebrush"
+  },
+  "render_type": "cutout"
+}
