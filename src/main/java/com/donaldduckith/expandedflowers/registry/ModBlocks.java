@@ -8,7 +8,10 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
+<<<<<<< HEAD
 import net.minecraft.world.effect.MobEffects;
+=======
+>>>>>>> origin/master
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
@@ -21,7 +24,10 @@ import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -48,7 +54,11 @@ public class ModBlocks {
                 .randomTicks()
                 .noCollission()
                 .instabreak()
+<<<<<<< HEAD
                 .sound(sound)
+=======
+                .sound(SoundType.CAVE_VINES)
+>>>>>>> origin/master
                 .pushReaction(PushReaction.DESTROY);
     }
     private static BlockBehaviour.Properties bottlebrushVineProperties(SoundType sound) {
@@ -60,6 +70,7 @@ public class ModBlocks {
                 .sound(sound)
                 .pushReaction(PushReaction.DESTROY);
     }
+<<<<<<< HEAD
     private static BlockBehaviour.Properties tallFlowerProperties() {
         return BlockBehaviour.Properties.of()
                 .mapColor(MapColor.PLANT)
@@ -88,6 +99,8 @@ public class ModBlocks {
                 .pushReaction(PushReaction.DESTROY);
     }
 
+=======
+>>>>>>> origin/master
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ExpandedFlowers.MODID);
 
     //Bottlebrush
@@ -386,6 +399,7 @@ public class ModBlocks {
             () -> new VineBlock(vineProperties(SoundType.CAVE_VINES)
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "pink_clematis")))));
 
+<<<<<<< HEAD
     //Rose Bush
     public static final DeferredBlock<TallFlowerBlock> BLACK_ROSE_BUSH = registerBlock("black_rose_bush",
             () -> new TallFlowerBlock(tallFlowerProperties()
@@ -588,6 +602,8 @@ public class ModBlocks {
     //Chrysanthemum
 
 
+=======
+>>>>>>> origin/master
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

@@ -19,6 +19,7 @@ public class ModItems {
                     .icon(() -> new ItemStack(ModBlocks.MAGENTA_BOUGAINVILLEA))
                     .title(Component.translatable("creative_tab.expandedflowers.items"))
                     .displayItems((parameters, output) -> {
+<<<<<<< HEAD
                         output.accept(ModBlocks.DEAD_AGAPANTHUS);
                         output.accept(ModBlocks.WHITE_AGAPANTHUS);
                         output.accept(ModBlocks.GRAY_AGAPANTHUS);
@@ -28,6 +29,8 @@ public class ModItems {
                         output.accept(ModBlocks.MAGENTA_AGAPANTHUS);
                         output.accept(ModBlocks.PINK_AGAPANTHUS);
 
+=======
+>>>>>>> origin/master
                         output.accept(ModBlocks.BOTTLEBRUSH_LEAVES);
                         output.accept(ModBlocks.WHITE_BOTTLEBRUSH_LEAVES);
                         output.accept(ModBlocks.RED_BOTTLEBRUSH_LEAVES);
@@ -59,6 +62,7 @@ public class ModItems {
                         output.accept(ModBlocks.MAGENTA_CLEMATIS);
                         output.accept(ModBlocks.PINK_CLEMATIS);
 
+<<<<<<< HEAD
                         output.accept(ModBlocks.HOLLYHOCK_BUSH);
 
                         output.accept(ModBlocks.WHITE_HYDRANGEA);
@@ -92,6 +96,8 @@ public class ModItems {
                         output.accept(ModBlocks.MAGENTA_ROSE_BUSH);
                         output.accept(ModBlocks.PINK_ROSE_BUSH);
 
+=======
+>>>>>>> origin/master
                         output.accept(ModBlocks.WHITE_WATTLE);
                         output.accept(ModBlocks.RED_WATTLE);
                         output.accept(ModBlocks.ORANGE_WATTLE);
