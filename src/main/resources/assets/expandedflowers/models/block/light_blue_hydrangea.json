@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "expandedflowers:block/light_blue_hydrangea"
+  },
+  "render_type": "cutout"
+}

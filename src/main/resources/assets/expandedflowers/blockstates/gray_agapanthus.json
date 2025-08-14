@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "expandedflowers:block/gray_agapanthus_bottom"
+    },
+    "half=upper": {
+      "model": "expandedflowers:block/gray_agapanthus_top"
+    }
+  }
+}

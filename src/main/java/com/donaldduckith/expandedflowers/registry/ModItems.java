@@ -19,6 +19,15 @@ public class ModItems {
                     .icon(() -> new ItemStack(ModBlocks.MAGENTA_BOUGAINVILLEA))
                     .title(Component.translatable("creative_tab.expandedflowers.items"))
                     .displayItems((parameters, output) -> {
+                        output.accept(ModBlocks.DEAD_AGAPANTHUS);
+                        output.accept(ModBlocks.WHITE_AGAPANTHUS);
+                        output.accept(ModBlocks.GRAY_AGAPANTHUS);
+                        output.accept(ModBlocks.ORANGE_AGAPANTHUS);
+                        output.accept(ModBlocks.BLUE_AGAPANTHUS);
+                        output.accept(ModBlocks.PURPLE_AGAPANTHUS);
+                        output.accept(ModBlocks.MAGENTA_AGAPANTHUS);
+                        output.accept(ModBlocks.PINK_AGAPANTHUS);
+
                         output.accept(ModBlocks.BOTTLEBRUSH_LEAVES);
                         output.accept(ModBlocks.WHITE_BOTTLEBRUSH_LEAVES);
                         output.accept(ModBlocks.RED_BOTTLEBRUSH_LEAVES);
@@ -49,6 +58,39 @@ public class ModItems {
                         output.accept(ModBlocks.PURPLE_CLEMATIS);
                         output.accept(ModBlocks.MAGENTA_CLEMATIS);
                         output.accept(ModBlocks.PINK_CLEMATIS);
+
+                        output.accept(ModBlocks.HOLLYHOCK_BUSH);
+
+                        output.accept(ModBlocks.WHITE_HYDRANGEA);
+                        output.accept(ModBlocks.RED_HYDRANGEA);
+                        output.accept(ModBlocks.YELLOW_HYDRANGEA);
+                        output.accept(ModBlocks.LIME_HYDRANGEA);
+                        output.accept(ModBlocks.LIGHT_BLUE_HYDRANGEA);
+                        output.accept(ModBlocks.BLUE_HYDRANGEA);
+                        output.accept(ModBlocks.PURPLE_HYDRANGEA);
+                        output.accept(ModBlocks.MAGENTA_HYDRANGEA);
+                        output.accept(ModBlocks.PINK_HYDRANGEA);
+
+                        output.accept(ModBlocks.WHITE_LILAC);
+                        output.accept(ModBlocks.PURPLE_LILAC);
+                        output.accept(ModBlocks.PINK_LILAC);
+
+                        output.accept(ModBlocks.WHITE_PEONY);
+                        output.accept(ModBlocks.MAGENTA_PEONY);
+
+                        output.accept(ModBlocks.ORANGE_POPPY);
+                        output.accept(ModBlocks.YELLOW_POPPY);
+
+                        output.accept(ModBlocks.WHITE_ROSE_BUSH);
+                        output.accept(ModBlocks.LIGHT_GRAY_ROSE_BUSH);
+                        output.accept(ModBlocks.BLACK_ROSE_BUSH);
+                        output.accept(ModBlocks.ORANGE_ROSE_BUSH);
+                        output.accept(ModBlocks.YELLOW_ROSE_BUSH);
+                        output.accept(ModBlocks.LIME_ROSE_BUSH);
+                        output.accept(ModBlocks.BLUE_ROSE_BUSH);
+                        output.accept(ModBlocks.PURPLE_ROSE_BUSH);
+                        output.accept(ModBlocks.MAGENTA_ROSE_BUSH);
+                        output.accept(ModBlocks.PINK_ROSE_BUSH);
 
                         output.accept(ModBlocks.WHITE_WATTLE);
                         output.accept(ModBlocks.RED_WATTLE);

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "expandedflowers:block/magenta_peony_bottom"
+    },
+    "half=upper": {
+      "model": "expandedflowers:block/magenta_peony_top"
+    }
+  }
+}
