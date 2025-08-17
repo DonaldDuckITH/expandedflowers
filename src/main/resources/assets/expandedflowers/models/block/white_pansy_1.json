@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/flowerbed_1",
+  "textures": {
+    "flowerbed": "expandedflowers:block/white_pansy",
+    "stem": "minecraft:block/wildflowers_stem"
+  },
+  "render_type": "cutout"
+}

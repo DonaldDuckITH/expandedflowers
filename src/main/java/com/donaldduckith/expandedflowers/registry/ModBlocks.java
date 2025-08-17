@@ -8,10 +8,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
-<<<<<<< HEAD
 import net.minecraft.world.effect.MobEffects;
-=======
->>>>>>> origin/master
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
@@ -22,12 +19,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -48,29 +43,24 @@ public class ModBlocks {
                 .pushReaction(PushReaction.DESTROY)
                 .isRedstoneConductor(ModBlocks::never);
     }
-    private static BlockBehaviour.Properties vineProperties(SoundType sound) {
+    private static BlockBehaviour.Properties vineProperties() {
         return BlockBehaviour.Properties.of()
                 .mapColor(MapColor.PLANT)
                 .randomTicks()
                 .noCollission()
                 .instabreak()
-<<<<<<< HEAD
-                .sound(sound)
-=======
                 .sound(SoundType.CAVE_VINES)
->>>>>>> origin/master
                 .pushReaction(PushReaction.DESTROY);
     }
-    private static BlockBehaviour.Properties bottlebrushVineProperties(SoundType sound) {
+    private static BlockBehaviour.Properties bottlebrushVineProperties() {
         return BlockBehaviour.Properties.of()
                 .mapColor(MapColor.PLANT)
                 .randomTicks()
                 .noCollission()
                 .instabreak()
-                .sound(sound)
+                .sound(SoundType.CAVE_VINES)
                 .pushReaction(PushReaction.DESTROY);
     }
-<<<<<<< HEAD
     private static BlockBehaviour.Properties tallFlowerProperties() {
         return BlockBehaviour.Properties.of()
                 .mapColor(MapColor.PLANT)
@@ -99,8 +89,6 @@ public class ModBlocks {
                 .pushReaction(PushReaction.DESTROY);
     }
 
-=======
->>>>>>> origin/master
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(ExpandedFlowers.MODID);
 
     //Bottlebrush
@@ -161,7 +149,7 @@ public class ModBlocks {
                 protected void spawnFallingLeavesParticle(Level level, BlockPos blockPos, RandomSource randomSource) {}
             });
     public static final DeferredBlock<GrowingPlantBodyBlock> WHITE_BOTTLEBRUSH = registerBlock("white_bottlebrush",
-            () -> new BottlebrushVinesBlock(bottlebrushVineProperties(SoundType.CAVE_VINES)
+            () -> new BottlebrushVinesBlock(bottlebrushVineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "white_bottlebrush"))),
                     Direction.DOWN, Block.column(14,0,16), false) {
                 @Override
@@ -170,7 +158,7 @@ public class ModBlocks {
                 }
             });
     public static final DeferredBlock<GrowingPlantBodyBlock> RED_BOTTLEBRUSH = registerBlock("red_bottlebrush",
-            () -> new BottlebrushVinesBlock(bottlebrushVineProperties(SoundType.CAVE_VINES)
+            () -> new BottlebrushVinesBlock(bottlebrushVineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "red_bottlebrush"))),
                     Direction.DOWN, Block.column(14,0,16), false) {
                 @Override
@@ -179,7 +167,7 @@ public class ModBlocks {
                 }
             });
     public static final DeferredBlock<GrowingPlantBodyBlock> ORANGE_BOTTLEBRUSH = registerBlock("orange_bottlebrush",
-            () -> new BottlebrushVinesBlock(bottlebrushVineProperties(SoundType.CAVE_VINES)
+            () -> new BottlebrushVinesBlock(bottlebrushVineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "orange_bottlebrush"))),
                     Direction.DOWN, Block.column(14,0,16), false) {
                 @Override
@@ -188,7 +176,7 @@ public class ModBlocks {
                 }
             });
     public static final DeferredBlock<GrowingPlantBodyBlock> YELLOW_BOTTLEBRUSH = registerBlock("yellow_bottlebrush",
-            () -> new BottlebrushVinesBlock(bottlebrushVineProperties(SoundType.CAVE_VINES)
+            () -> new BottlebrushVinesBlock(bottlebrushVineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "yellow_bottlebrush"))),
                     Direction.DOWN, Block.column(14,0,16), false) {
                 @Override
@@ -197,7 +185,7 @@ public class ModBlocks {
                 }
             });
     public static final DeferredBlock<GrowingPlantBodyBlock> MAGENTA_BOTTLEBRUSH = registerBlock("magenta_bottlebrush",
-            () -> new BottlebrushVinesBlock(bottlebrushVineProperties(SoundType.CAVE_VINES)
+            () -> new BottlebrushVinesBlock(bottlebrushVineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "magenta_bottlebrush"))),
                     Direction.DOWN, Block.column(14,0,16), false) {
                 @Override
@@ -206,7 +194,7 @@ public class ModBlocks {
                 }
             });
     public static final DeferredBlock<GrowingPlantBodyBlock> PINK_BOTTLEBRUSH = registerBlock("pink_bottlebrush",
-            () -> new BottlebrushVinesBlock(bottlebrushVineProperties(SoundType.CAVE_VINES)
+            () -> new BottlebrushVinesBlock(bottlebrushVineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "pink_bottlebrush"))),
                     Direction.DOWN, Block.column(14,0,16), false) {
                 @Override
@@ -215,7 +203,7 @@ public class ModBlocks {
                 }
             });
     public static final DeferredBlock<GrowingPlantHeadBlock> WHITE_BOTTLEBRUSH_END = registerBlock("white_bottlebrush_end",
-            () -> new BottlebrushVinesEndBlock(bottlebrushVineProperties(SoundType.CAVE_VINES)
+            () -> new BottlebrushVinesEndBlock(bottlebrushVineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "white_bottlebrush_end"))),
                     Direction.DOWN, Block.column(14, 0, 16), false, 0.1){
                 @Override
@@ -224,7 +212,7 @@ public class ModBlocks {
                 }
             });
     public static final DeferredBlock<GrowingPlantHeadBlock> RED_BOTTLEBRUSH_END = registerBlock("red_bottlebrush_end",
-            () -> new BottlebrushVinesEndBlock(bottlebrushVineProperties(SoundType.CAVE_VINES)
+            () -> new BottlebrushVinesEndBlock(bottlebrushVineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "red_bottlebrush_end"))),
                     Direction.DOWN, Block.column(14, 0, 16), false, 0.1){
                 @Override
@@ -233,7 +221,7 @@ public class ModBlocks {
                 }
             });
     public static final DeferredBlock<GrowingPlantHeadBlock> ORANGE_BOTTLEBRUSH_END = registerBlock("orange_bottlebrush_end",
-            () -> new BottlebrushVinesEndBlock(bottlebrushVineProperties(SoundType.CAVE_VINES)
+            () -> new BottlebrushVinesEndBlock(bottlebrushVineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "orange_bottlebrush_end"))),
                     Direction.DOWN, Block.column(14, 0, 16), false, 0.1){
                 @Override
@@ -242,7 +230,7 @@ public class ModBlocks {
                 }
             });
     public static final DeferredBlock<GrowingPlantHeadBlock> YELLOW_BOTTLEBRUSH_END = registerBlock("yellow_bottlebrush_end",
-            () -> new BottlebrushVinesEndBlock(bottlebrushVineProperties(SoundType.CAVE_VINES)
+            () -> new BottlebrushVinesEndBlock(bottlebrushVineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "yellow_bottlebrush_end"))),
                     Direction.DOWN, Block.column(14, 0, 16), false, 0.1){
                 @Override
@@ -251,7 +239,7 @@ public class ModBlocks {
                 }
             });
     public static final DeferredBlock<GrowingPlantHeadBlock> MAGENTA_BOTTLEBRUSH_END = registerBlock("magenta_bottlebrush_end",
-            () -> new BottlebrushVinesEndBlock(bottlebrushVineProperties(SoundType.CAVE_VINES)
+            () -> new BottlebrushVinesEndBlock(bottlebrushVineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "magenta_bottlebrush_end"))),
                     Direction.DOWN, Block.column(14, 0, 16), false, 0.1){
                 @Override
@@ -260,7 +248,7 @@ public class ModBlocks {
                 }
             });
     public static final DeferredBlock<GrowingPlantHeadBlock> PINK_BOTTLEBRUSH_END = registerBlock("pink_bottlebrush_end",
-            () -> new BottlebrushVinesEndBlock(bottlebrushVineProperties(SoundType.CAVE_VINES)
+            () -> new BottlebrushVinesEndBlock(bottlebrushVineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "pink_bottlebrush_end"))),
                     Direction.DOWN, Block.column(14, 0, 16), false, 0.1){
                 @Override
@@ -273,6 +261,14 @@ public class ModBlocks {
     public static final DeferredBlock<Block> BOUGAINVILLEA_LEAVES = registerBlock("bougainvillea_leaves",
             () -> new LeavesBlock(0F, leavesProperties(SoundType.AZALEA_LEAVES)
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "bougainvillea_leaves")))) {
+                @Override
+                public MapCodec<? extends LeavesBlock> codec() {return null;}
+                @Override
+                protected void spawnFallingLeavesParticle(Level level, BlockPos pos, RandomSource random) {}
+            });
+    public static final DeferredBlock<Block> WHITE_BOUGAINVILLEA = registerBlock("white_bougainvillea",
+            () -> new LeavesBlock(0F, leavesProperties(SoundType.AZALEA_LEAVES)
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "white_bougainvillea")))) {
                 @Override
                 public MapCodec<? extends LeavesBlock> codec() {return null;}
                 @Override
@@ -329,16 +325,16 @@ public class ModBlocks {
 
     //Wattle
     public static final DeferredBlock<Block> WHITE_WATTLE = registerBlock("white_wattle",
-            () -> new VineBlock(vineProperties(SoundType.CAVE_VINES)
+            () -> new VineBlock(vineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "white_wattle")))));
     public static final DeferredBlock<Block> RED_WATTLE = registerBlock("red_wattle",
-            () -> new VineBlock(vineProperties(SoundType.CAVE_VINES)
+            () -> new VineBlock(vineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "red_wattle")))));
     public static final DeferredBlock<Block> ORANGE_WATTLE = registerBlock("orange_wattle",
-            () -> new VineBlock(vineProperties(SoundType.CAVE_VINES)
+            () -> new VineBlock(vineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "orange_wattle")))));
     public static final DeferredBlock<Block> YELLOW_WATTLE = registerBlock("yellow_wattle",
-            () -> new VineBlock(vineProperties(SoundType.CAVE_VINES)
+            () -> new VineBlock(vineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "yellow_wattle")))));
     public static final DeferredBlock<Block> WHITE_WATTLE_LEAVES = registerBlock("white_wattle_leaves",
             () -> new LeavesBlock(0F, leavesProperties(SoundType.GRASS)
@@ -375,31 +371,30 @@ public class ModBlocks {
 
     //Clematis
     public static final DeferredBlock<Block> CLEMATIS_VINE = registerBlock("clematis_vine",
-            () -> new VineBlock(vineProperties(SoundType.CAVE_VINES)
+            () -> new VineBlock(vineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "clematis_vine")))));
     public static final DeferredBlock<Block> WHITE_CLEMATIS = registerBlock("white_clematis",
-            () -> new VineBlock(vineProperties(SoundType.CAVE_VINES)
+            () -> new VineBlock(vineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "white_clematis")))));
     public static final DeferredBlock<Block> RED_CLEMATIS = registerBlock("red_clematis",
-            () -> new VineBlock(vineProperties(SoundType.CAVE_VINES)
+            () -> new VineBlock(vineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "red_clematis")))));
     public static final DeferredBlock<Block> YELLOW_CLEMATIS = registerBlock("yellow_clematis",
-            () -> new VineBlock(vineProperties(SoundType.CAVE_VINES)
+            () -> new VineBlock(vineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "yellow_clematis")))));
     public static final DeferredBlock<Block> BLUE_CLEMATIS = registerBlock("blue_clematis",
-            () -> new VineBlock(vineProperties(SoundType.CAVE_VINES)
+            () -> new VineBlock(vineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "blue_clematis")))));
     public static final DeferredBlock<Block> PURPLE_CLEMATIS = registerBlock("purple_clematis",
-            () -> new VineBlock(vineProperties(SoundType.CAVE_VINES)
+            () -> new VineBlock(vineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "purple_clematis")))));
     public static final DeferredBlock<Block> MAGENTA_CLEMATIS = registerBlock("magenta_clematis",
-            () -> new VineBlock(vineProperties(SoundType.CAVE_VINES)
+            () -> new VineBlock(vineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "magenta_clematis")))));
     public static final DeferredBlock<Block> PINK_CLEMATIS = registerBlock("pink_clematis",
-            () -> new VineBlock(vineProperties(SoundType.CAVE_VINES)
+            () -> new VineBlock(vineProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "pink_clematis")))));
 
-<<<<<<< HEAD
     //Rose Bush
     public static final DeferredBlock<TallFlowerBlock> BLACK_ROSE_BUSH = registerBlock("black_rose_bush",
             () -> new TallFlowerBlock(tallFlowerProperties()
@@ -455,6 +450,9 @@ public class ModBlocks {
     public static final DeferredBlock<TriplePlantBlock> HOLLYHOCK_BUSH = registerBlock("hollyhock_bush",
             () -> new TriplePlantBlock(tallFlowerProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "hollyhock_bush")))));
+    public static final DeferredBlock<TripleFlowerBlock> WHITE_HOLLYHOCK = registerBlock("white_hollyhock",
+            () -> new TripleFlowerBlock(tallFlowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "white_hollyhock")))));
 
     //Hydrangea
     public static final DeferredBlock<LargeFlowerBlock> WHITE_HYDRANGEA = registerBlock("white_hydrangea",
@@ -486,8 +484,8 @@ public class ModBlocks {
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "pink_hydrangea")))));
 
     //Agapanthus
-    public static final DeferredBlock<TallFlowerBlock> DEAD_AGAPANTHUS = registerBlock("dead_agapanthus",
-            () -> new TallFlowerBlock(tallFlowerProperties()
+    public static final DeferredBlock<DoublePlantBlock> DEAD_AGAPANTHUS = registerBlock("dead_agapanthus",
+            () -> new DoublePlantBlock(tallFlowerProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "dead_agapanthus")))));
     public static final DeferredBlock<TallFlowerBlock> GRAY_AGAPANTHUS = registerBlock("gray_agapanthus",
             () -> new TallFlowerBlock(tallFlowerProperties()
@@ -512,6 +510,9 @@ public class ModBlocks {
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "pink_agapanthus")))));
 
     //Poppy
+    public static final DeferredBlock<ModFlowerBlock> WHITE_POPPY = registerBlock("white_poppy",
+            () -> new ModFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "white_poppy")))));
     public static final DeferredBlock<ModFlowerBlock> ORANGE_POPPY = registerBlock("orange_poppy",
             () -> new ModFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, flowerProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "orange_poppy")))));
@@ -584,6 +585,9 @@ public class ModBlocks {
     public static final DeferredBlock<ModFlowerBlock> YELLOW_ORCHID = registerBlock("yellow_orchid",
             () -> new ModFlowerBlock(MobEffects.SATURATION, 0.35F, flowerProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "yellow_orchid")))));
+    public static final DeferredBlock<ModFlowerBlock> CYAN_ORCHID = registerBlock("cyan_orchid",
+            () -> new ModFlowerBlock(MobEffects.SATURATION, 0.35F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "cyan_orchid")))));
     public static final DeferredBlock<ModFlowerBlock> PURPLE_ORCHID = registerBlock("purple_orchid",
             () -> new ModFlowerBlock(MobEffects.SATURATION, 0.35F, flowerProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "purple_orchid")))));
@@ -599,11 +603,203 @@ public class ModBlocks {
             () -> new ModFlowerBlock(MobEffects.SATURATION, 0.35F, flowerProperties()
                     .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "light_blue_azure_bluet")))));
 
+    //Daisy
+    public static final DeferredBlock<ModFlowerBlock> CYAN_OXEYE_DAISY = registerBlock("cyan_oxeye_daisy",
+            () -> new ModFlowerBlock(MobEffects.REGENERATION, 7.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "cyan_oxeye_daisy")))));
+
     //Chrysanthemum
+    public static final DeferredBlock<ModFlowerBlock> WHITE_CHRYSANTHEMUM = registerBlock("white_chrysanthemum",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_HEALTH, 0.05F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "white_chrysanthemum")))));
+    public static final DeferredBlock<ModFlowerBlock> BLACK_CHRYSANTHEMUM = registerBlock("black_chrysanthemum",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_HEALTH, 0.05F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "black_chrysanthemum")))));
+    public static final DeferredBlock<ModFlowerBlock> RED_CHRYSANTHEMUM = registerBlock("red_chrysanthemum",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_HEALTH, 0.05F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "red_chrysanthemum")))));
+    public static final DeferredBlock<ModFlowerBlock> ORANGE_CHRYSANTHEMUM = registerBlock("orange_chrysanthemum",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_HEALTH, 0.05F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "orange_chrysanthemum")))));
+    public static final DeferredBlock<ModFlowerBlock> YELLOW_CHRYSANTHEMUM = registerBlock("yellow_chrysanthemum",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_HEALTH, 0.05F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "yellow_chrysanthemum")))));
+    public static final DeferredBlock<ModFlowerBlock> LIME_CHRYSANTHEMUM = registerBlock("lime_chrysanthemum",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_HEALTH, 0.05F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "lime_chrysanthemum")))));
+    public static final DeferredBlock<ModFlowerBlock> GREEN_CHRYSANTHEMUM = registerBlock("green_chrysanthemum",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_HEALTH, 0.05F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "green_chrysanthemum")))));
+    public static final DeferredBlock<ModFlowerBlock> LIGHT_BLUE_CHRYSANTHEMUM = registerBlock("light_blue_chrysanthemum",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_HEALTH, 0.05F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "light_blue_chrysanthemum")))));
+    public static final DeferredBlock<ModFlowerBlock> BLUE_CHRYSANTHEMUM = registerBlock("blue_chrysanthemum",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_HEALTH, 0.05F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "blue_chrysanthemum")))));
+    public static final DeferredBlock<ModFlowerBlock> PURPLE_CHRYSANTHEMUM = registerBlock("purple_chrysanthemum",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_HEALTH, 0.05F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "purple_chrysanthemum")))));
+    public static final DeferredBlock<ModFlowerBlock> MAGENTA_CHRYSANTHEMUM = registerBlock("magenta_chrysanthemum",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_HEALTH, 0.05F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "magenta_chrysanthemum")))));
+    public static final DeferredBlock<ModFlowerBlock> PINK_CHRYSANTHEMUM = registerBlock("pink_chrysanthemum",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_HEALTH, 0.05F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "pink_chrysanthemum")))));
 
+    //Hellebore
+    public static final DeferredBlock<ModFlowerBlock> WHITE_HELLEBORE = registerBlock("white_hellebore",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_DAMAGE, 0.35F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "white_hellebore")))));
+    public static final DeferredBlock<ModFlowerBlock> BLACK_HELLEBORE = registerBlock("black_hellebore",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_DAMAGE, 0.35F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "black_hellebore")))));
+    public static final DeferredBlock<ModFlowerBlock> RED_HELLEBORE = registerBlock("red_hellebore",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_DAMAGE, 0.35F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "red_hellebore")))));
+    public static final DeferredBlock<ModFlowerBlock> YELLOW_HELLEBORE = registerBlock("yellow_hellebore",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_DAMAGE, 0.35F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "yellow_hellebore")))));
+    public static final DeferredBlock<ModFlowerBlock> LIME_HELLEBORE = registerBlock("lime_hellebore",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_DAMAGE, 0.35F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "lime_hellebore")))));
+    public static final DeferredBlock<ModFlowerBlock> PURPLE_HELLEBORE = registerBlock("purple_hellebore",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_DAMAGE, 0.35F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "purple_hellebore")))));
+    public static final DeferredBlock<ModFlowerBlock> MAGENTA_HELLEBORE = registerBlock("magenta_hellebore",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_DAMAGE, 0.35F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "magenta_hellebore")))));
+    public static final DeferredBlock<ModFlowerBlock> PINK_HELLEBORE = registerBlock("pink_hellebore",
+            () -> new ModFlowerBlock(MobEffects.INSTANT_DAMAGE, 0.35F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "pink_hellebore")))));
 
-=======
->>>>>>> origin/master
+    //Grevillea
+    public static final DeferredBlock<ModFlowerBlock> WHITE_GREVILLEA = registerBlock("white_grevillea",
+            () -> new ModFlowerBlock(MobEffects.POISON, 12.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "white_grevillea")))));
+    public static final DeferredBlock<ModFlowerBlock> LIGHT_GRAY_GREVILLEA = registerBlock("light_gray_grevillea",
+            () -> new ModFlowerBlock(MobEffects.POISON, 12.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "light_gray_grevillea")))));
+    public static final DeferredBlock<ModFlowerBlock> GRAY_GREVILLEA = registerBlock("gray_grevillea",
+            () -> new ModFlowerBlock(MobEffects.POISON, 12.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "gray_grevillea")))));
+    public static final DeferredBlock<ModFlowerBlock> BLACK_GREVILLEA = registerBlock("black_grevillea",
+            () -> new ModFlowerBlock(MobEffects.POISON, 12.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "black_grevillea")))));
+    public static final DeferredBlock<ModFlowerBlock> RED_GREVILLEA = registerBlock("red_grevillea",
+            () -> new ModFlowerBlock(MobEffects.POISON, 12.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "red_grevillea")))));
+    public static final DeferredBlock<ModFlowerBlock> ORANGE_GREVILLEA = registerBlock("orange_grevillea",
+            () -> new ModFlowerBlock(MobEffects.POISON, 12.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "orange_grevillea")))));
+    public static final DeferredBlock<ModFlowerBlock> YELLOW_GREVILLEA = registerBlock("yellow_grevillea",
+            () -> new ModFlowerBlock(MobEffects.POISON, 12.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "yellow_grevillea")))));
+    public static final DeferredBlock<ModFlowerBlock> MAGENTA_GREVILLEA = registerBlock("magenta_grevillea",
+            () -> new ModFlowerBlock(MobEffects.POISON, 12.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "magenta_grevillea")))));
+
+    //Waratah
+    public static final DeferredBlock<ModFlowerBlock> WHITE_WARATAH = registerBlock("white_waratah",
+            () -> new ModFlowerBlock(MobEffects.SATURATION, 0.35F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "white_waratah")))));
+    public static final DeferredBlock<ModFlowerBlock> RED_WARATAH = registerBlock("red_waratah",
+            () -> new ModFlowerBlock(MobEffects.SATURATION, 0.35F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "red_waratah")))));
+    public static final DeferredBlock<ModFlowerBlock> YELLOW_WARATAH = registerBlock("yellow_waratah",
+            () -> new ModFlowerBlock(MobEffects.SATURATION, 0.35F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "yellow_waratah")))));
+    public static final DeferredBlock<ModFlowerBlock> MAGENTA_WARATAH = registerBlock("magenta_waratah",
+            () -> new ModFlowerBlock(MobEffects.SATURATION, 0.35F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "magenta_waratah")))));
+    public static final DeferredBlock<ModFlowerBlock> PINK_WARATAH = registerBlock("pink_waratah",
+            () -> new ModFlowerBlock(MobEffects.SATURATION, 0.35F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "pink_waratah")))));
+
+    //Rosemary
+    public static final DeferredBlock<LargeFlowerBlock> ROSEMARY_BUSH = registerBlock("rosemary_bush",
+            () -> new LargeFlowerBlock(MobEffects.ABSORPTION, 20.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "rosemary_bush")))));
+    public static final DeferredBlock<LargeFlowerBlock> WHITE_ROSEMARY = registerBlock("white_rosemary",
+            () -> new LargeFlowerBlock(MobEffects.ABSORPTION, 20.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "white_rosemary")))));
+    public static final DeferredBlock<LargeFlowerBlock> PURPLE_ROSEMARY = registerBlock("purple_rosemary",
+            () -> new LargeFlowerBlock(MobEffects.ABSORPTION, 20.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "purple_rosemary")))));
+    public static final DeferredBlock<LargeFlowerBlock> PINK_ROSEMARY = registerBlock("pink_rosemary",
+            () -> new LargeFlowerBlock(MobEffects.ABSORPTION, 20.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "pink_rosemary")))));
+
+    //Foxglove
+    public static final DeferredBlock<TallFlowerBlock> FOXGLOVE_BUSH = registerBlock("foxglove_bush",
+            () -> new TallFlowerBlock(tallFlowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "foxglove_bush")))));
+    public static final DeferredBlock<TallFlowerBlock> WHITE_FOXGLOVE = registerBlock("white_foxglove",
+            () -> new TallFlowerBlock(tallFlowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "white_foxglove")))));
+    public static final DeferredBlock<TallFlowerBlock> YELLOW_FOXGLOVE = registerBlock("yellow_foxglove",
+            () -> new TallFlowerBlock(tallFlowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "yellow_foxglove")))));
+    public static final DeferredBlock<TallFlowerBlock> BLUE_FOXGLOVE = registerBlock("blue_foxglove",
+            () -> new TallFlowerBlock(tallFlowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "blue_foxglove")))));
+    public static final DeferredBlock<TallFlowerBlock> PURPLE_FOXGLOVE = registerBlock("purple_foxglove",
+            () -> new TallFlowerBlock(tallFlowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "purple_foxglove")))));
+    public static final DeferredBlock<TallFlowerBlock> MAGENTA_FOXGLOVE = registerBlock("magenta_foxglove",
+            () -> new TallFlowerBlock(tallFlowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "magenta_foxglove")))));
+    public static final DeferredBlock<TallFlowerBlock> PINK_FOXGLOVE = registerBlock("pink_foxglove",
+            () -> new TallFlowerBlock(tallFlowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "pink_foxglove")))));
+
+    //Bird of Paradise
+    public static final DeferredBlock<LargeFlowerBlock> WHITE_BIRD_OF_PARADISE = registerBlock("white_bird_of_paradise",
+            () -> new LargeFlowerBlock(MobEffects.HUNGER, 30.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "white_bird_of_paradise")))));
+    public static final DeferredBlock<LargeFlowerBlock> ORANGE_BIRD_OF_PARADISE = registerBlock("orange_bird_of_paradise",
+            () -> new LargeFlowerBlock(MobEffects.HUNGER, 30.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "orange_bird_of_paradise")))));
+    public static final DeferredBlock<LargeFlowerBlock> YELLOW_BIRD_OF_PARADISE = registerBlock("yellow_bird_of_paradise",
+            () -> new LargeFlowerBlock(MobEffects.HUNGER, 30.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "yellow_bird_of_paradise")))));
+    public static final DeferredBlock<LargeFlowerBlock> MAGENTA_BIRD_OF_PARADISE = registerBlock("magenta_bird_of_paradise",
+            () -> new LargeFlowerBlock(MobEffects.HUNGER, 30.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "magenta_bird_of_paradise")))));
+
+    //Arctotis
+    public static final DeferredBlock<ModFlowerBlock> WHITE_ARCTOTIS = registerBlock("white_arctotis",
+            () -> new ModFlowerBlock(MobEffects.NIGHT_VISION, 7.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "white_arctotis")))));
+    public static final DeferredBlock<ModFlowerBlock> RED_ARCTOTIS = registerBlock("red_arctotis",
+            () -> new ModFlowerBlock(MobEffects.NIGHT_VISION, 7.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "red_arctotis")))));
+    public static final DeferredBlock<ModFlowerBlock> ORANGE_ARCTOTIS = registerBlock("orange_arctotis",
+            () -> new ModFlowerBlock(MobEffects.NIGHT_VISION, 7.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "orange_arctotis")))));
+    public static final DeferredBlock<ModFlowerBlock> YELLOW_ARCTOTIS = registerBlock("yellow_arctotis",
+            () -> new ModFlowerBlock(MobEffects.NIGHT_VISION, 7.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "yellow_arctotis")))));
+    public static final DeferredBlock<ModFlowerBlock> MAGENTA_ARCTOTIS = registerBlock("magenta_arctotis",
+            () -> new ModFlowerBlock(MobEffects.NIGHT_VISION, 7.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "magenta_arctotis")))));
+    public static final DeferredBlock<ModFlowerBlock> PINK_ARCTOTIS = registerBlock("pink_arctotis",
+            () -> new ModFlowerBlock(MobEffects.NIGHT_VISION, 7.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "pink_arctotis")))));
+
+    //Babiana
+    public static final DeferredBlock<ModFlowerBlock> WHITE_BABIANA = registerBlock("white_babiana",
+            () -> new ModFlowerBlock(MobEffects.REGENERATION, 9.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "white_babiana")))));
+    public static final DeferredBlock<ModFlowerBlock> PURPLE_BABIANA = registerBlock("purple_babiana",
+            () -> new ModFlowerBlock(MobEffects.REGENERATION, 9.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "purple_babiana")))));
+    public static final DeferredBlock<ModFlowerBlock> MAGENTA_BABIANA = registerBlock("magenta_babiana",
+            () -> new ModFlowerBlock(MobEffects.REGENERATION, 9.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "magenta_babiana")))));
+    public static final DeferredBlock<ModFlowerBlock> PINK_BABIANA = registerBlock("pink_babiana",
+            () -> new ModFlowerBlock(MobEffects.REGENERATION, 9.0F, flowerProperties()
+                    .setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "pink_babiana")))));
+
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

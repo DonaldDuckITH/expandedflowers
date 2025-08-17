@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "expandedflowers:block/pink_waratah"
+  },
+  "render_type": "cutout"
+}

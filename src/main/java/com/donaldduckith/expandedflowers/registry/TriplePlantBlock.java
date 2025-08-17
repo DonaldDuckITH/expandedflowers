@@ -74,7 +74,7 @@ public class TriplePlantBlock extends VegetationBlock {
     protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockPos blockpos = pos.below();
         BlockState blockstate = level.getBlockState(blockpos);
-        return state.getValue(SEGMENT) == TripleBlockSegment.LOWER ? blockstate.getBlock() != this : blockstate.is(this);
+        return state.getValue(SEGMENT) == TripleBlockSegment.LOWER ? super.canSurvive(state, level, pos) : blockstate.is(this);
         /*if (state.getValue(SEGMENT) == TripleBlockSegment.UPPER) {
             BlockState blockstate = level.getBlockState(pos.below());
             return blockstate.is(this) && blockstate.getValue(SEGMENT) == TripleBlockSegment.MIDDLE;

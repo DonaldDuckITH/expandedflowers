@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "expandedflowers:block/purple_hellebore"
+  },
+  "render_type": "cutout"
+}

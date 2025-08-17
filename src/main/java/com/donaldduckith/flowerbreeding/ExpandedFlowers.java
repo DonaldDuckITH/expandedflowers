@@ -2,6 +2,9 @@ package com.donaldduckith.flowerbreeding;
 
 import com.donaldduckith.expandedflowers.registry.ModBlocks;
 import com.donaldduckith.expandedflowers.registry.ModItems;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -46,7 +49,41 @@ public class ExpandedFlowers {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            insertAfter(event, Items.POPPY.getDefaultInstance(), ModBlocks.ORANGE_POPPY.asItem().getDefaultInstance(), ModBlocks.YELLOW_POPPY.asItem().getDefaultInstance());
+            insertAfter(event, Items.PEONY.getDefaultInstance(), ModBlocks.WHITE_PEONY.asItem().getDefaultInstance(), ModBlocks.MAGENTA_PEONY.asItem().getDefaultInstance());
+            insertAfter(event, Items.ROSE_BUSH.getDefaultInstance(), ModBlocks.WHITE_ROSE_BUSH.asItem().getDefaultInstance(), ModBlocks.LIGHT_GRAY_ROSE_BUSH.asItem().getDefaultInstance(),
+                    ModBlocks.BLACK_ROSE_BUSH.asItem().getDefaultInstance(), ModBlocks.ORANGE_ROSE_BUSH.asItem().getDefaultInstance(), ModBlocks.YELLOW_ROSE_BUSH.asItem().getDefaultInstance(),
+                    ModBlocks.LIME_ROSE_BUSH.asItem().getDefaultInstance(), ModBlocks.BLUE_ROSE_BUSH.asItem().getDefaultInstance(), ModBlocks.PURPLE_ROSE_BUSH.asItem().getDefaultInstance(),
+                    ModBlocks.MAGENTA_ROSE_BUSH.asItem().getDefaultInstance(), ModBlocks.PINK_ROSE_BUSH.asItem().getDefaultInstance());
+            insertAfter(event, Items.OXEYE_DAISY.getDefaultInstance(), ModBlocks.CYAN_OXEYE_DAISY.asItem().getDefaultInstance());
+            insertAfter(event, Items.WHITE_TULIP.getDefaultInstance(), ModBlocks.BLACK_TULIP.asItem().getDefaultInstance());
+            insertAfter(event, Items.ORANGE_TULIP.getDefaultInstance(), ModBlocks.YELLOW_TULIP.asItem().getDefaultInstance());
+            insertBefore(event, Items.PINK_TULIP.getDefaultInstance(), ModBlocks.MAGENTA_TULIP.asItem().getDefaultInstance(), ModBlocks.PURPLE_TULIP.asItem().getDefaultInstance());
+            insertAfter(event, Items.BLUE_ORCHID.getDefaultInstance(), ModBlocks.WHITE_ORCHID.asItem().getDefaultInstance(), ModBlocks.ORANGE_ORCHID.asItem().getDefaultInstance(),
+                    ModBlocks.YELLOW_ORCHID.asItem().getDefaultInstance(), ModBlocks.CYAN_ORCHID.asItem().getDefaultInstance(), ModBlocks.PURPLE_ORCHID.asItem().getDefaultInstance(),
+                    ModBlocks.MAGENTA_ORCHID.asItem().getDefaultInstance(), ModBlocks.PINK_ORCHID.asItem().getDefaultInstance());
+            insertAfter(event, Items.LILAC.getDefaultInstance(), ModBlocks.WHITE_LILAC.asItem().getDefaultInstance(), ModBlocks.PURPLE_LILAC.asItem().getDefaultInstance(),
+                    ModBlocks.PINK_LILAC.asItem().getDefaultInstance());
+            insertAfter(event, Items.AZURE_BLUET.getDefaultInstance(), ModBlocks.LIGHT_BLUE_AZURE_BLUET.asItem().getDefaultInstance());
+        }
     }
+
+    private static void insertAfter(BuildCreativeModeTabContentsEvent event, ItemStack startItem, ItemStack... itemsToAdd) {
+        ItemStack previousItem = startItem;
+        for (ItemStack stack : itemsToAdd) {
+            event.insertAfter(previousItem, stack, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            previousItem = stack;
+        }
+    }
+    private static void insertBefore(BuildCreativeModeTabContentsEvent event, ItemStack endItem, ItemStack... itemsToAdd) {
+        ItemStack nextItem = endItem;
+        for (ItemStack stack : itemsToAdd) {
+            event.insertBefore(nextItem, stack, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            nextItem = stack;
+        }
+    }
+
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
     }

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "expandedflowers:block/foxglove_bottom"
+    },
+    "half=upper": {
+      "model": "expandedflowers:block/foxglove_top"
+    }
+  }
+}

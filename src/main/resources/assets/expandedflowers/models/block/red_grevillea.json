@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "expandedflowers:block/red_grevillea"
+  },
+  "render_type": "cutout"
+}

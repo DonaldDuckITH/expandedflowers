@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "expandedflowers:block/light_blue_azure_bluet"
+  }
+}
