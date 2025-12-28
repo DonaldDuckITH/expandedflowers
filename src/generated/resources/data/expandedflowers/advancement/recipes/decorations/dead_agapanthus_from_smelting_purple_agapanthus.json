@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_purple_agapanthus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "expandedflowers:purple_agapanthus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "expandedflowers:dead_agapanthus_from_smelting_purple_agapanthus"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_purple_agapanthus"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "expandedflowers:dead_agapanthus_from_smelting_purple_agapanthus"
+    ]
+  }
+}

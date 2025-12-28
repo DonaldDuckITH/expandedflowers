@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "expandedflowers:light_blue_hydrangea"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "expandedflowers:blocks/light_blue_hydrangea"
+}

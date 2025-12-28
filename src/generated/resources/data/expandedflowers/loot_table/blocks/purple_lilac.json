@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "expandedflowers:purple_lilac",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
+          "name": "expandedflowers:purple_lilac"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "expandedflowers:blocks/purple_lilac"
+}

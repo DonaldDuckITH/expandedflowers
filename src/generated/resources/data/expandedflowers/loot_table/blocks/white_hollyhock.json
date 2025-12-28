@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "expandedflowers:white_hollyhock",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "segment": "lower"
+              }
+            }
+          ],
+          "name": "expandedflowers:white_hollyhock"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "expandedflowers:blocks/white_hollyhock"
+}
