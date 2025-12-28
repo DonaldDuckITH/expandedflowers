@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "#expandedflowers:short_lime_flowers"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:lime_dye"
+  }
+}

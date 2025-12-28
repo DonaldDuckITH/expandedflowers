@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pink_hollyhock": {
+      "conditions": {
+        "items": [
+          {
+            "items": "expandedflowers:pink_hollyhock"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "expandedflowers:hollyhock_bush_from_smelting_pink_hollyhock"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pink_hollyhock"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "expandedflowers:hollyhock_bush_from_smelting_pink_hollyhock"
+    ]
+  }
+}

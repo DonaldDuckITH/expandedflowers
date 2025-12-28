@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "expandedflowers:clematis_vine_from_smelting_white_clematis"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_clematis": {
+      "conditions": {
+        "items": [
+          {
+            "items": "expandedflowers:white_clematis"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_white_clematis"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "expandedflowers:clematis_vine_from_smelting_white_clematis"
+    ]
+  }
+}

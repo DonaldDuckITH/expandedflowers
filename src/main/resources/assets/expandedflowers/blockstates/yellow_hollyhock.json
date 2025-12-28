@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "segment=lower": {
+      "model": "expandedflowers:block/hollyhock_bush_bottom"
+    },
+    "segment=middle": {
+      "model": "expandedflowers:block/yellow_hollyhock_middle"
+    },
+    "segment=upper": {
+      "model": "expandedflowers:block/yellow_hollyhock_top"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_tall_white_flower": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#expandedflowers:tall_white_flowers"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "expandedflowers:white_dye_double"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_tall_white_flower"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "expandedflowers:white_dye_double"
+    ]
+  }
+}

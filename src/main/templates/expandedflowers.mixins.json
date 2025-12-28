@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.donaldduckith.expandedflowers.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BeeMixin",
+    "BeeAccessor",
+    "BeePollinateGoalMixin",
+    "MobAccessor"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

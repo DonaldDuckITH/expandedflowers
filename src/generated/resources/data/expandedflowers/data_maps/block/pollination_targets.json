@@ -1,0 +1,20 @@
+{
+  "values": {
+    "minecraft:flowering_azalea": [
+      {
+        "pollinator": "minecraft:poppy",
+        "result": "expandedflowers:red_bottlebrush_sapling"
+      },
+      {
+        "pollinator": "minecraft:spore_blossom",
+        "result": "expandedflowers:magenta_bougainvillea_sapling"
+      }
+    ],
+    "minecraft:vine": [
+      {
+        "pollinator": "expandedflowers:purple_tulip",
+        "result": "expandedflowers:purple_clematis"
+      }
+    ]
+  }
+}

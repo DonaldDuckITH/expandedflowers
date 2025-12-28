@@ -1,0 +1,8 @@
+{
+  "parent": "expandedflowers:block/template_bougainvillea",
+  "textures": {
+    "side": "expandedflowers:block/bougainvillea_sapling_side",
+    "top": "expandedflowers:block/bougainvillea_leaves"
+  },
+  "render_type": "cutout"
+}

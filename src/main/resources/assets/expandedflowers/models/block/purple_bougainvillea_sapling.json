@@ -1,0 +1,8 @@
+{
+  "parent": "expandedflowers:block/template_bougainvillea",
+  "textures": {
+    "side": "expandedflowers:block/purple_bougainvillea_side",
+    "top": "expandedflowers:block/purple_bougainvillea"
+  },
+  "render_type": "cutout"
+}

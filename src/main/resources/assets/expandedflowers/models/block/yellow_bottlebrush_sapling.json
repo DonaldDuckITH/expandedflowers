@@ -1,0 +1,8 @@
+{
+  "parent": "expandedflowers:block/template_bottlebrush",
+  "textures": {
+    "side": "expandedflowers:block/yellow_bottlebrush_end",
+    "top": "expandedflowers:block/bottlebrush_leaves_end"
+  },
+  "render_type": "cutout"
+}

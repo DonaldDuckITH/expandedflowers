@@ -1,6 +1,6 @@
 package com.donaldduckith.expandedflowers.registry;
 
-import com.donaldduckith.flowerbreeding.ExpandedFlowers;
+import com.donaldduckith.expandedflowers.ExpandedFlowers;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -28,6 +28,18 @@ public class ModItems {
                         output.accept(ModBlocks.MAGENTA_AGAPANTHUS);
                         output.accept(ModBlocks.PINK_AGAPANTHUS);
 
+                        output.accept(ModBlocks.WHITE_ARCTOTIS);
+                        output.accept(ModBlocks.RED_ARCTOTIS);
+                        output.accept(ModBlocks.ORANGE_ARCTOTIS);
+                        output.accept(ModBlocks.YELLOW_ARCTOTIS);
+                        output.accept(ModBlocks.MAGENTA_ARCTOTIS);
+                        output.accept(ModBlocks.PINK_ARCTOTIS);
+
+                        output.accept(ModBlocks.WHITE_BABIANA);
+                        output.accept(ModBlocks.PURPLE_BABIANA);
+                        output.accept(ModBlocks.MAGENTA_BABIANA);
+                        output.accept(ModBlocks.PINK_BABIANA);
+
                         output.accept(ModBlocks.WHITE_BIRD_OF_PARADISE);
                         output.accept(ModBlocks.ORANGE_BIRD_OF_PARADISE);
                         output.accept(ModBlocks.YELLOW_BIRD_OF_PARADISE);
@@ -40,6 +52,12 @@ public class ModItems {
                         output.accept(ModBlocks.YELLOW_BOTTLEBRUSH_LEAVES);
                         output.accept(ModBlocks.MAGENTA_BOTTLEBRUSH_LEAVES);
                         output.accept(ModBlocks.PINK_BOTTLEBRUSH_LEAVES);
+                        output.accept(ModBlocks.WHITE_BOTTLEBRUSH_SAPLING);
+                        output.accept(ModBlocks.RED_BOTTLEBRUSH_SAPLING);
+                        output.accept(ModBlocks.ORANGE_BOTTLEBRUSH_SAPLING);
+                        output.accept(ModBlocks.YELLOW_BOTTLEBRUSH_SAPLING);
+                        output.accept(ModBlocks.MAGENTA_BOTTLEBRUSH_SAPLING);
+                        output.accept(ModBlocks.PINK_BOTTLEBRUSH_SAPLING);
                         output.accept(ModBlocks.WHITE_BOTTLEBRUSH_END);
                         output.accept(ModBlocks.RED_BOTTLEBRUSH_END);
                         output.accept(ModBlocks.ORANGE_BOTTLEBRUSH_END);
@@ -48,12 +66,21 @@ public class ModItems {
                         output.accept(ModBlocks.PINK_BOTTLEBRUSH_END);
 
                         output.accept(ModBlocks.BOUGAINVILLEA_LEAVES);
+                        output.accept(ModBlocks.WHITE_BOUGAINVILLEA);
                         output.accept(ModBlocks.RED_BOUGAINVILLEA);
                         output.accept(ModBlocks.ORANGE_BOUGAINVILLEA);
                         output.accept(ModBlocks.YELLOW_BOUGAINVILLEA);
                         output.accept(ModBlocks.PURPLE_BOUGAINVILLEA);
                         output.accept(ModBlocks.MAGENTA_BOUGAINVILLEA);
                         output.accept(ModBlocks.PINK_BOUGAINVILLEA);
+                        output.accept(ModBlocks.BOUGAINVILLEA_SAPLING);
+                        output.accept(ModBlocks.WHITE_BOUGAINVILLEA_SAPLING);
+                        output.accept(ModBlocks.RED_BOUGAINVILLEA_SAPLING);
+                        output.accept(ModBlocks.ORANGE_BOUGAINVILLEA_SAPLING);
+                        output.accept(ModBlocks.YELLOW_BOUGAINVILLEA_SAPLING);
+                        output.accept(ModBlocks.PURPLE_BOUGAINVILLEA_SAPLING);
+                        output.accept(ModBlocks.MAGENTA_BOUGAINVILLEA_SAPLING);
+                        output.accept(ModBlocks.PINK_BOUGAINVILLEA_SAPLING);
 
                         output.accept(ModBlocks.WHITE_CHRYSANTHEMUM);
                         output.accept(ModBlocks.BLACK_CHRYSANTHEMUM);
@@ -96,6 +123,11 @@ public class ModItems {
 
                         output.accept(ModBlocks.HOLLYHOCK_BUSH);
                         output.accept(ModBlocks.WHITE_HOLLYHOCK);
+                        output.accept(ModBlocks.BLACK_HOLLYHOCK);
+                        output.accept(ModBlocks.RED_HOLLYHOCK);
+                        output.accept(ModBlocks.YELLOW_HOLLYHOCK);
+                        output.accept(ModBlocks.MAGENTA_HOLLYHOCK);
+                        output.accept(ModBlocks.PINK_HOLLYHOCK);
 
                         output.accept(ModBlocks.WHITE_HELLEBORE);
                         output.accept(ModBlocks.BLACK_HELLEBORE);
@@ -138,14 +170,18 @@ public class ModItems {
                         output.accept(ModBlocks.MAGENTA_WARATAH);
                         output.accept(ModBlocks.PINK_WARATAH);
 
-                        output.accept(ModBlocks.WHITE_WATTLE);
-                        output.accept(ModBlocks.RED_WATTLE);
-                        output.accept(ModBlocks.ORANGE_WATTLE);
-                        output.accept(ModBlocks.YELLOW_WATTLE);
+                        output.accept(ModBlocks.WHITE_WATTLE_VINE);
+                        output.accept(ModBlocks.RED_WATTLE_VINE);
+                        output.accept(ModBlocks.ORANGE_WATTLE_VINE);
+                        output.accept(ModBlocks.YELLOW_WATTLE_VINE);
                         output.accept(ModBlocks.WHITE_WATTLE_LEAVES);
                         output.accept(ModBlocks.RED_WATTLE_LEAVES);
                         output.accept(ModBlocks.ORANGE_WATTLE_LEAVES);
                         output.accept(ModBlocks.YELLOW_WATTLE_LEAVES);
+                        output.accept(ModBlocks.WHITE_WATTLE_SAPLING);
+                        output.accept(ModBlocks.RED_WATTLE_SAPLING);
+                        output.accept(ModBlocks.ORANGE_WATTLE_SAPLING);
+                        output.accept(ModBlocks.YELLOW_WATTLE_SAPLING);
                     }).build());
 
     public static void register(IEventBus eventBus) {

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "expandedflowers:rosemary_bush_from_smelting_white_rosemary"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_rosemary": {
+      "conditions": {
+        "items": [
+          {
+            "items": "expandedflowers:white_rosemary"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_white_rosemary"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "expandedflowers:rosemary_bush_from_smelting_white_rosemary"
+    ]
+  }
+}

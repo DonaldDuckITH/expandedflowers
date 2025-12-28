@@ -1,0 +1,33 @@
+{
+  "values": [
+    "minecraft:acacia_sapling",
+    "minecraft:allium",
+    "minecraft:azalea",
+    "minecraft:azure_bluet",
+    "minecraft:bush",
+    "minecraft:blue_orchid",
+    "minecraft:lily_of_the_valley",
+    "minecraft:pink_petals",
+    "minecraft:orange_tulip",
+    "minecraft:oxeye_daisy",
+    "minecraft:rose_bush",
+    "minecraft:vine",
+    "minecraft:wildflowers",
+    "expandedflowers:red_bottlebrush_sapling",
+    "expandedflowers:magenta_bougainvillea_sapling",
+    "expandedflowers:yellow_wattle_sapling",
+    "expandedflowers:purple_clematis",
+    "expandedflowers:pink_lilac",
+    "expandedflowers:purple_agapanthus",
+    "expandedflowers:light_blue_azure_bluet",
+    "expandedflowers:pink_pansy",
+    "expandedflowers:yellow_pansy",
+    "expandedflowers:red_grevillea",
+    "expandedflowers:red_waratah",
+    "expandedflowers:purple_rosemary",
+    "expandedflowers:pink_foxglove",
+    "expandedflowers:orange_bird_of_paradise",
+    "expandedflowers:yellow_arctotis",
+    "expandedflowers:magenta_babiana"
+  ]
+}

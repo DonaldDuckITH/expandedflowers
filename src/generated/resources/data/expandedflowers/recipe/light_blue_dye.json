@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "#expandedflowers:short_light_blue_flowers"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:light_blue_dye"
+  }
+}

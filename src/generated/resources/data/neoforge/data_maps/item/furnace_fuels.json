@@ -1,0 +1,49 @@
+{
+  "values": {
+    "expandedflowers:bottlebrush_leaves": {
+      "burn_time": 100
+    },
+    "expandedflowers:bougainvillea_leaves": {
+      "burn_time": 100
+    },
+    "expandedflowers:magenta_bottlebrush_leaves": {
+      "burn_time": 100
+    },
+    "expandedflowers:magenta_bougainvillea": {
+      "burn_time": 100
+    },
+    "expandedflowers:orange_bottlebrush_leaves": {
+      "burn_time": 100
+    },
+    "expandedflowers:orange_bougainvillea": {
+      "burn_time": 100
+    },
+    "expandedflowers:pink_bottlebrush_leaves": {
+      "burn_time": 100
+    },
+    "expandedflowers:pink_bougainvillea": {
+      "burn_time": 100
+    },
+    "expandedflowers:purple_bougainvillea": {
+      "burn_time": 100
+    },
+    "expandedflowers:red_bottlebrush_leaves": {
+      "burn_time": 100
+    },
+    "expandedflowers:red_bougainvillea": {
+      "burn_time": 100
+    },
+    "expandedflowers:white_bottlebrush_leaves": {
+      "burn_time": 100
+    },
+    "expandedflowers:white_bougainvillea": {
+      "burn_time": 100
+    },
+    "expandedflowers:yellow_bottlebrush_leaves": {
+      "burn_time": 100
+    },
+    "expandedflowers:yellow_bougainvillea": {
+      "burn_time": 100
+    }
+  }
+}

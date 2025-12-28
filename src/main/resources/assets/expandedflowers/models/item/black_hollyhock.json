@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "expandedflowers:block/black_hollyhock_top"
+  }
+}

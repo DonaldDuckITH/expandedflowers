@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "expandedflowers:block/white_hollyhock_bottom"
-  },
-  "render_type": "cutout"
-}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.2,
+  "group": "clematis_vine",
+  "ingredient": "expandedflowers:yellow_clematis",
+  "result": {
+    "count": 1,
+    "id": "expandedflowers:clematis_vine"
+  }
+}
