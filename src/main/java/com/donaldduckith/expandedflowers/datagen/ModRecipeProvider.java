@@ -2,6 +2,7 @@ package com.donaldduckith.expandedflowers.datagen;
 
 import com.donaldduckith.expandedflowers.ExpandedFlowers;
 import com.donaldduckith.expandedflowers.registry.ModBlocks;
+import com.donaldduckith.expandedflowers.registry.ModItems;
 import com.donaldduckith.expandedflowers.registry.ModTags;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
@@ -10,6 +11,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -165,6 +167,14 @@ public class ModRecipeProvider extends RecipeProvider{
                 .requires(ModTags.Items.TALL_PINK_FLOWERS)
                 .unlockedBy("has_tall_pink_flower", has(ModTags.Items.TALL_PINK_FLOWERS))
                 .save(output, ResourceKey.create(Registries.RECIPE, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, getItemName(Items.PINK_DYE) + "_double")));
+
+        shaped(RecipeCategory.TOOLS, ModItems.POLLEN_BRUSH)
+                .unlockedBy("has_feather", has(Items.FEATHER))
+                .unlockedBy("has_honeycomb", has(Items.HONEYCOMB))
+                .pattern("F").define('F', Items.FEATHER)
+                .pattern("#").define('#', Items.HONEYCOMB)
+                .pattern("S").define('S', Items.STRING)
+                .save(output, ResourceKey.create(Registries.RECIPE, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, getItemName(ModItems.POLLEN_BRUSH))));
 
         oreSmelting(AGAPANTHUS, RecipeCategory.DECORATIONS, ModBlocks.DEAD_AGAPANTHUS.asItem(), 0.2F, 200, "dead_agapanthus");
         oreSmelting(CLEMATIS, RecipeCategory.DECORATIONS, ModBlocks.CLEMATIS_VINE.asItem(), 0.2F, 200, "clematis_vine");

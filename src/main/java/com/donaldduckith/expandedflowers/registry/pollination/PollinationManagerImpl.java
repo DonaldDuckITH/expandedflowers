@@ -1,21 +1,21 @@
 package com.donaldduckith.expandedflowers.registry.pollination;
 
 import com.donaldduckith.expandedflowers.registry.ModData;
-import com.donaldduckith.expandedflowers.registry.pollination.PollinationInfo;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.Property;
+import com.donaldduckith.expandedflowers.registry.pollination.PollinationInfo.PollinationSet;
 
 import java.util.List;
-import java.util.Map;
+
+import static com.donaldduckith.expandedflowers.registry.pollination.PollinationInfo.POLLINATION_INFO;
 
 public class PollinationManagerImpl implements PollinationManager {
     public static final PollinationManagerImpl INSTANCE = new PollinationManagerImpl();
@@ -32,7 +32,23 @@ public class PollinationManagerImpl implements PollinationManager {
         return level.registryAccess().lookupOrThrow(ModData.POLLINATION_REGISTRY).containsKey(BuiltInRegistries.BLOCK.getKey(block));
     }
 
-    public void convert(ServerLevel level, BlockPos blockPos, Block newBlock) {
+    public Block getPlantConversionResult(ServerLevel level, BlockPos blockPos, Block pollinator) {
+        BlockState state = level.getBlockState(blockPos);
+        Holder<Block> holder = state.getBlockHolder();
+        PollinationInfo data = holder.getData(POLLINATION_INFO);
+        List<PollinationSet> sets = data.sets();
+        if (data != null) {
+            for (PollinationSet set : sets) {
+                if (set.pollinator().equals(pollinator)) {
+                    return set.result();
+                }
+            }
+        }
+        return level.getBlockState(blockPos).getBlock();
+    }
+
+    public void convert(ServerLevel level, BlockPos blockPos, Block pollinator) {
+        Block newBlock = getPlantConversionResult(level, blockPos, pollinator);
         BlockState state = level.getBlockState(blockPos);
         BlockState newState = newBlock.defaultBlockState();
 

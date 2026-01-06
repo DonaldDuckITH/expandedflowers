@@ -1,4 +1,4 @@
-// 1.21.7	2025-09-10T14:13:36.132508714	Tags for minecraft:block mod id expandedflowers
+// 1.21.7	2026-01-05T23:06:55.204526409	Tags for minecraft:block mod id expandedflowers
 4e8cc7caed5dcd0595f710bb50106a0bc4128675 data/expandedflowers/tags/block/azure_bluets.json
 e535c202090f61884710bc37868bebf5e1276ab8 data/expandedflowers/tags/block/convertible_flowers.json
 1ae2315d8c8087cc904aca2c5f6ce5d0e0baacb8 data/expandedflowers/tags/block/flowering_leaves.json
@@ -10,6 +10,6 @@ b6e8b2dc8c50457a36cd1709bbca6e429706d191 data/expandedflowers/tags/block/peonies
 a014ad1b33a973f4b9692c7f6984fad170c04e98 data/expandedflowers/tags/block/rose_bushes.json
 fd5144a749e6d0a0401b28726cb256bcfd78929d data/expandedflowers/tags/block/tulips.json
 b2c64317aeb1406946e9550b7a5c8e46bbc336e2 data/minecraft/tags/block/climbable.json
-2f04214fb61d836cd40711f6cb99eca9e66052dd data/minecraft/tags/block/flowers.json
+994c21dc3c44ca4f2344c38d85456deeb6120643 data/minecraft/tags/block/flowers.json
 15a655733540d97d357ab2ecc5e2df9ce6ad19f6 data/minecraft/tags/block/leaves.json
 fea7855284a57648bce6d83566389ee5f3a7b61a data/minecraft/tags/block/saplings.json

@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "minecraft:meadow",
+  "features": "expandedflowers:meadow_flowers_placed",
+  "step": "vegetal_decoration"
+}

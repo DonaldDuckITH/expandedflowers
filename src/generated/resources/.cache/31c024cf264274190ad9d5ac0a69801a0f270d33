@@ -1,4 +1,4 @@
-// 1.21.7	2025-10-29T19:50:11.902957541	Expanded Flowers Recipes
+// 1.21.7	2026-01-06T19:27:38.145098735	Expanded Flowers Recipes
 1774a3a01e3a3253deb04372d73c0e3ac8b32bbb data/expandedflowers/advancement/recipes/decorations/clematis_vine_from_smelting_blue_clematis.json
 72d43509e7845d1a8c9e2c7b1a295cbfe42c986e data/expandedflowers/advancement/recipes/decorations/clematis_vine_from_smelting_magenta_clematis.json
 355ca75405127e2cb4f8d479ee89a7dca6153522 data/expandedflowers/advancement/recipes/decorations/clematis_vine_from_smelting_pink_clematis.json
@@ -60,6 +60,7 @@ b4b20db3ff5184497a2b8f34ba1d1985dafbb134 data/expandedflowers/advancement/recipe
 b08d2cdddf608baee6f8821916c0d9f107e8ee39 data/expandedflowers/advancement/recipes/misc/white_dye_double.json
 d2bec225520130992775332dff1f53683f4de81b data/expandedflowers/advancement/recipes/misc/yellow_dye.json
 d8895a712e50a053ec5e41091e837902892746eb data/expandedflowers/advancement/recipes/misc/yellow_dye_double.json
+5c292f254a8fe7f57b49cd42734c9d6133163568 data/expandedflowers/advancement/recipes/tools/pollen_brush.json
 1d069d48b3b593e21f24386d54e4771aed39dfa0 data/expandedflowers/recipe/black_dye.json
 6ea95e6515196e4ffcab4e134191dd6ffbb89005 data/expandedflowers/recipe/black_dye_double.json
 49512a94351d9c781e214c71fc017f94fd65f659 data/expandedflowers/recipe/blue_dye.json
@@ -110,6 +111,7 @@ a653a59741541f0c4ee3fec7b3b684215272a9c6 data/expandedflowers/recipe/magenta_dye
 12e261e235377455f7d2ccec19def6512691ad0b data/expandedflowers/recipe/orange_dye_double.json
 da1764399f0c994fd69bd376c9763d987ad57dff data/expandedflowers/recipe/pink_dye.json
 c3b252bbefa3ffb19961be680de48b735ef18631 data/expandedflowers/recipe/pink_dye_double.json
+0569fc0ecf06201c27db701df4adfe73e9c2b7b5 data/expandedflowers/recipe/pollen_brush.json
 faabbaf3a5a7aea497b903191af1e457dfa732d0 data/expandedflowers/recipe/purple_dye.json
 9d72e51944bcc6b650da30d9977a971e406008d8 data/expandedflowers/recipe/purple_dye_double.json
 84dc18fc95f20966e0bee4574de2e5cac8d21ef5 data/expandedflowers/recipe/red_dye.json

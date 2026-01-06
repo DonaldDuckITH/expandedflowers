@@ -2,6 +2,8 @@
   "itemGroup.expandedflowers": "Expanded Flowers",
   "creative_tab.expandedflowers.items": "Expanded Flowers",
 
+  "tooltip.expandedflowers.pollen_brush.pollen_type": "Pollen Type",
+
   "block.expandedflowers.white_agapanthus": "White Agapanthus",
   "item.expandedflowers.white_agapanthus": "White Agapanthus",
   "block.expandedflowers.gray_agapanthus": "Gray Agapanthus",
@@ -179,6 +181,21 @@
   "block.expandedflowers.pink_clematis": "Pink Clematis",
   "item.expandedflowers.pink_clematis": "Pink Clematis",
 
+  "block.expandedflowers.white_fire_lily": "White Fire Lily",
+  "item.expandedflowers.white_fire_lily": "White Fire Lily",
+  "block.expandedflowers.red_fire_lily": "Red Fire Lily",
+  "item.expandedflowers.red_fire_lily": "Red Fire Lily",
+  "block.expandedflowers.orange_fire_lily": "Orange Fire Lily",
+  "item.expandedflowers.orange_fire_lily": "Orange Fire Lily",
+  "block.expandedflowers.yellow_fire_lily": "Yellow Fire Lily",
+  "item.expandedflowers.yellow_fire_lily": "Yellow Fire Lily",
+  "block.expandedflowers.purple_fire_lily": "Purple Fire Lily",
+  "item.expandedflowers.purple_fire_lily": "Purple Fire Lily",
+  "block.expandedflowers.magenta_fire_lily": "Magenta Fire Lily",
+  "item.expandedflowers.magenta_fire_lily": "Magenta Fire Lily",
+  "block.expandedflowers.pink_fire_lily": "Pink Fire Lily",
+  "item.expandedflowers.pink_fire_lily": "Pink Fire Lily",
+
   "block.expandedflowers.foxglove_bush": "Foxglove Bush",
   "item.expandedflowers.foxglove_bush": "Foxglove Bush",
   "block.expandedflowers.white_foxglove": "White Foxglove",
@@ -312,6 +329,8 @@
   "item.expandedflowers.white_peony": "White Peony",
   "block.expandedflowers.magenta_peony": "Magenta Peony",
   "item.expandedflowers.magenta_peony": "Magenta Peony",
+
+  "item.expandedflowers.pollen_brush": "Pollen Brush",
 
   "block.expandedflowers.white_poppy": "White Poppy",
   "item.expandedflowers.white_poppy": "White Poppy",

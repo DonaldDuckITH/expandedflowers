@@ -632,6 +632,22 @@ public class ModBlocks {
     public static final DeferredBlock<ModFlowerBlock> PINK_BABIANA = registerBlock("pink_babiana",
             (properties) -> new ModFlowerBlock(MobEffects.REGENERATION, 9.0F, properties), flowerProperties());
 
+    //Fire Lily
+    public static final DeferredBlock<ModFlowerBlock> WHITE_FIRE_LILY = registerBlock("white_fire_lily",
+            (properties) -> new ModFlowerBlock(MobEffects.FIRE_RESISTANCE, 7.0F, properties), flowerProperties());
+    public static final DeferredBlock<ModFlowerBlock> RED_FIRE_LILY = registerBlock("red_fire_lily",
+            (properties) -> new ModFlowerBlock(MobEffects.FIRE_RESISTANCE, 7.0F, properties), flowerProperties());
+    public static final DeferredBlock<ModFlowerBlock> ORANGE_FIRE_LILY = registerBlock("orange_fire_lily",
+            (properties) -> new ModFlowerBlock(MobEffects.FIRE_RESISTANCE, 7.0F, properties), flowerProperties());
+    public static final DeferredBlock<ModFlowerBlock> YELLOW_FIRE_LILY = registerBlock("yellow_fire_lily",
+            (properties) -> new ModFlowerBlock(MobEffects.FIRE_RESISTANCE, 7.0F, properties), flowerProperties());
+    public static final DeferredBlock<ModFlowerBlock> PURPLE_FIRE_LILY = registerBlock("purple_fire_lily",
+            (properties) -> new ModFlowerBlock(MobEffects.FIRE_RESISTANCE, 7.0F, properties), flowerProperties());
+    public static final DeferredBlock<ModFlowerBlock> MAGENTA_FIRE_LILY = registerBlock("magenta_fire_lily",
+            (properties) -> new ModFlowerBlock(MobEffects.FIRE_RESISTANCE, 7.0F, properties), flowerProperties());
+    public static final DeferredBlock<ModFlowerBlock> PINK_FIRE_LILY = registerBlock("pink_fire_lily",
+            (properties) -> new ModFlowerBlock(MobEffects.FIRE_RESISTANCE, 7.0F, properties), flowerProperties());
+
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function, BlockBehaviour.Properties properties) {
         DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, function, properties);
         registerBlockItem(name, toReturn);

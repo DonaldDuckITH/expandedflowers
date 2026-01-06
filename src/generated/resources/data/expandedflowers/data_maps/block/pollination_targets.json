@@ -1,5 +1,279 @@
 {
   "values": {
+    "expandedflowers:light_blue_azure_bluet": [
+      {
+        "pollinator": "minecraft:blue_orchid",
+        "result": "expandedflowers:light_blue_chrysanthemum"
+      }
+    ],
+    "expandedflowers:light_blue_chrysanthemum": [
+      {
+        "pollinator": "minecraft:white_tulip",
+        "result": "expandedflowers:white_chrysanthemum"
+      },
+      {
+        "pollinator": "expandedflowers:black_tulip",
+        "result": "expandedflowers:black_chrysanthemum"
+      },
+      {
+        "pollinator": "minecraft:red_tulip",
+        "result": "expandedflowers:red_chrysanthemum"
+      },
+      {
+        "pollinator": "minecraft:orange_tulip",
+        "result": "expandedflowers:orange_chrysanthemum"
+      },
+      {
+        "pollinator": "expandedflowers:yellow_tulip",
+        "result": "expandedflowers:yellow_chrysanthemum"
+      },
+      {
+        "pollinator": "expandedflowers:lime_rose_bush",
+        "result": "expandedflowers:lime_chrysanthemum"
+      },
+      {
+        "pollinator": "expandedflowers:cyan_oxeye_daisy",
+        "result": "expandedflowers:green_chrysanthemum"
+      },
+      {
+        "pollinator": "minecraft:cornflower",
+        "result": "expandedflowers:blue_chrysanthemum"
+      },
+      {
+        "pollinator": "expandedflowers:purple_tulip",
+        "result": "expandedflowers:purple_chrysanthemum"
+      },
+      {
+        "pollinator": "expandedflowers:magenta_tulip",
+        "result": "expandedflowers:magenta_chrysanthemum"
+      },
+      {
+        "pollinator": "minecraft:pink_tulip",
+        "result": "expandedflowers:pink_chrysanthemum"
+      }
+    ],
+    "expandedflowers:magenta_bougainvillea_sapling": [
+      {
+        "pollinator": "expandedflowers:white_orchid",
+        "result": "expandedflowers:white_bougainvillea_sapling"
+      },
+      {
+        "pollinator": "minecraft:poppy",
+        "result": "expandedflowers:red_bougainvillea_sapling"
+      },
+      {
+        "pollinator": "expandedflowers:orange_poppy",
+        "result": "expandedflowers:orange_bougainvillea_sapling"
+      },
+      {
+        "pollinator": "minecraft:wildflowers",
+        "result": "expandedflowers:yellow_bougainvillea_sapling"
+      },
+      {
+        "pollinator": "expandedflowers:purple_tulip",
+        "result": "expandedflowers:purple_bougainvillea_sapling"
+      },
+      {
+        "pollinator": "minecraft:pink_petals",
+        "result": "expandedflowers:pink_bougainvillea_sapling"
+      }
+    ],
+    "expandedflowers:pink_babiana": [
+      {
+        "pollinator": "minecraft:oxeye_daisy",
+        "result": "expandedflowers:white_babiana"
+      },
+      {
+        "pollinator": "expandedflowers:purple_tulip",
+        "result": "expandedflowers:purple_babiana"
+      },
+      {
+        "pollinator": "minecraft:allium",
+        "result": "expandedflowers:magenta_babiana"
+      }
+    ],
+    "expandedflowers:pink_foxglove": [
+      {
+        "pollinator": "minecraft:lily_of_the_valley",
+        "result": "expandedflowers:white_foxglove"
+      },
+      {
+        "pollinator": "minecraft:wildflowers",
+        "result": "expandedflowers:yellow_foxglove"
+      },
+      {
+        "pollinator": "minecraft:cornflower",
+        "result": "expandedflowers:blue_foxglove"
+      },
+      {
+        "pollinator": "expandedflowers:purple_tulip",
+        "result": "expandedflowers:purple_foxglove"
+      },
+      {
+        "pollinator": "minecraft:lilac",
+        "result": "expandedflowers:magenta_foxglove"
+      }
+    ],
+    "expandedflowers:pink_hollyhock": [
+      {
+        "pollinator": "expandedflowers:white_peony",
+        "result": "expandedflowers:white_hollyhock"
+      },
+      {
+        "pollinator": "expandedflowers:black_tulip",
+        "result": "expandedflowers:black_hollyhock"
+      },
+      {
+        "pollinator": "minecraft:red_tulip",
+        "result": "expandedflowers:red_hollyhock"
+      },
+      {
+        "pollinator": "expandedflowers:yellow_rose_bush",
+        "result": "expandedflowers:yellow_hollyhock"
+      },
+      {
+        "pollinator": "expandedflowers:magenta_peony",
+        "result": "expandedflowers:magenta_hollyhock"
+      }
+    ],
+    "expandedflowers:pink_lilac": [
+      {
+        "pollinator": "minecraft:pink_tulip",
+        "result": "expandedflowers:pink_foxglove"
+      }
+    ],
+    "expandedflowers:purple_agapanthus": [
+      {
+        "pollinator": "minecraft:oxeye_daisy",
+        "result": "expandedflowers:white_agapanthus"
+      },
+      {
+        "pollinator": "minecraft:closed_eyeblossom",
+        "result": "expandedflowers:gray_agapanthus"
+      },
+      {
+        "pollinator": "minecraft:open_eyeblossom",
+        "result": "expandedflowers:gray_agapanthus"
+      },
+      {
+        "pollinator": "minecraft:orange_tulip",
+        "result": "expandedflowers:orange_agapanthus"
+      },
+      {
+        "pollinator": "minecraft:cornflower",
+        "result": "expandedflowers:blue_agapanthus"
+      },
+      {
+        "pollinator": "minecraft:lilac",
+        "result": "expandedflowers:magenta_agapanthus"
+      },
+      {
+        "pollinator": "minecraft:pink_tulip",
+        "result": "expandedflowers:pink_agapanthus"
+      }
+    ],
+    "expandedflowers:purple_clematis": [
+      {
+        "pollinator": "minecraft:lily_of_the_valley",
+        "result": "expandedflowers:white_clematis"
+      },
+      {
+        "pollinator": "minecraft:poppy",
+        "result": "expandedflowers:red_clematis"
+      },
+      {
+        "pollinator": "minecraft:wildflowers",
+        "result": "expandedflowers:yellow_clematis"
+      },
+      {
+        "pollinator": "minecraft:cornflower",
+        "result": "expandedflowers:blue_clematis"
+      },
+      {
+        "pollinator": "minecraft:allium",
+        "result": "expandedflowers:magenta_clematis"
+      },
+      {
+        "pollinator": "minecraft:pink_petals",
+        "result": "expandedflowers:pink_clematis"
+      }
+    ],
+    "expandedflowers:red_bottlebrush": [
+      {
+        "pollinator": "minecraft:azure_bluet",
+        "result": "expandedflowers:white_bottlebrush"
+      },
+      {
+        "pollinator": "expandedflowers:orange_orchid",
+        "result": "expandedflowers:orange_bottlebrush"
+      },
+      {
+        "pollinator": "minecraft:dandelion",
+        "result": "expandedflowers:yellow_bottlebrush"
+      },
+      {
+        "pollinator": "minecraft:spore_blossom",
+        "result": "expandedflowers:magenta_bottlebrush"
+      },
+      {
+        "pollinator": "expandedflowers:pink_orchid",
+        "result": "expandedflowers:pink_bottlebrush"
+      }
+    ],
+    "expandedflowers:red_fire_lily": [
+      {
+        "pollinator": "minecraft:oxeye_daisy",
+        "result": "expandedflowers:white_fire_lily"
+      },
+      {
+        "pollinator": "minecraft:orange_tulip",
+        "result": "expandedflowers:orange_fire_lily"
+      },
+      {
+        "pollinator": "minecraft:dandelion",
+        "result": "expandedflowers:yellow_fire_lily"
+      },
+      {
+        "pollinator": "expandedflowers:purple_tulip",
+        "result": "expandedflowers:purple_fire_lily"
+      },
+      {
+        "pollinator": "minecraft:lilac",
+        "result": "expandedflowers:magenta_fire_lily"
+      },
+      {
+        "pollinator": "minecraft:pink_tulip",
+        "result": "expandedflowers:pink_fire_lily"
+      }
+    ],
+    "expandedflowers:yellow_arctotis": [
+      {
+        "pollinator": "expandedflowers:white_orchid",
+        "result": "expandedflowers:white_arctotis"
+      },
+      {
+        "pollinator": "minecraft:poppy",
+        "result": "expandedflowers:red_arctotis"
+      },
+      {
+        "pollinator": "minecraft:orange_tulip",
+        "result": "expandedflowers:orange_arctotis"
+      },
+      {
+        "pollinator": "minecraft:allium",
+        "result": "expandedflowers:magenta_arctotis"
+      },
+      {
+        "pollinator": "minecraft:pink_petals",
+        "result": "expandedflowers:pink_arctotis"
+      }
+    ],
+    "minecraft:azure_bluet": [
+      {
+        "pollinator": "minecraft:dandelion",
+        "result": "expandedflowers:yellow_arctotis"
+      }
+    ],
     "minecraft:flowering_azalea": [
       {
         "pollinator": "minecraft:poppy",
@@ -10,10 +284,26 @@
         "result": "expandedflowers:magenta_bougainvillea_sapling"
       }
     ],
-    "minecraft:vine": [
+    "minecraft:lily_of_the_valley": [
       {
-        "pollinator": "expandedflowers:purple_tulip",
-        "result": "expandedflowers:purple_clematis"
+        "pollinator": "minecraft:allium",
+        "result": "expandedflowers:purple_agapanthus"
+      },
+      {
+        "pollinator": "minecraft:poppy",
+        "result": "expandedflowers:red_fire_lily"
+      }
+    ],
+    "minecraft:peony": [
+      {
+        "pollinator": "expandedflowers:pink_rose_bush",
+        "result": "expandedflowers:pink_hollyhock"
+      }
+    ],
+    "minecraft:pink_petals": [
+      {
+        "pollinator": "expandedflowers:white_lilac",
+        "result": "expandedflowers:pink_babiana"
       }
     ]
   }

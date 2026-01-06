@@ -2,21 +2,19 @@ package com.donaldduckith.expandedflowers.entity.goal;
 
 import com.donaldduckith.expandedflowers.mixin.BeeAccessor;
 import com.donaldduckith.expandedflowers.mixin.MobAccessor;
-import com.donaldduckith.expandedflowers.registry.pollination.PollinationInfo;
-import com.donaldduckith.expandedflowers.registry.pollination.PollinationInfo.PollinationSet;
+import com.donaldduckith.expandedflowers.registry.pollination.PollinationManagerImpl;
 import it.unimi.dsi.fastutil.longs.Long2LongOpenHashMap;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Holder;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.animal.Bee;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
-import java.util.List;
 import java.util.Optional;
 
 public class ConvertPlantGoal extends Bee.BaseBeeGoal {
@@ -25,6 +23,7 @@ public class ConvertPlantGoal extends Bee.BaseBeeGoal {
     private BlockPos savedFlowerPos;
     @Nullable
     private Block savedPollenType;
+    private PollinationManagerImpl pollination;
     private static final int MIN_POLLINATION_TICKS = 400;
     private static final int MIN_FIND_FLOWER_RETRY_COOLDOWN = 20;
     private static final int MAX_FIND_FLOWER_RETRY_COOLDOWN = 60;
@@ -40,12 +39,15 @@ public class ConvertPlantGoal extends Bee.BaseBeeGoal {
     private int pollinatingTicks;
     private static final int MAX_POLLINATING_TICKS = 600;
     private int remainingCooldownBeforeLocatingNewFlower;
+    public ServerLevel server;
     private Long2LongOpenHashMap unreachableFlowerCache = new Long2LongOpenHashMap();
+
 
     public ConvertPlantGoal(Bee bee) {
         bee.super();
         this.bee = bee;
         remainingCooldownBeforeLocatingNewFlower = Mth.nextInt(bee.getRandom(), MIN_FIND_FLOWER_RETRY_COOLDOWN, MAX_FIND_FLOWER_RETRY_COOLDOWN);
+        server = this.bee.getServer().getLevel(this.bee.level().dimension());
         this.setFlags(EnumSet.of(Flag.MOVE));
     }
 
@@ -55,6 +57,8 @@ public class ConvertPlantGoal extends Bee.BaseBeeGoal {
             return false;
         } else if (bee.level().isRaining()) {
             return false;
+        } else if (this.hasSavedPollenType()) {
+            return true;
         } else {
             Optional<BlockPos> optional = this.findNearbyConvertiblePlant();
             if (optional.isPresent()) {
@@ -86,9 +90,68 @@ public class ConvertPlantGoal extends Bee.BaseBeeGoal {
         return false;
     }
 
+    void dropFlower() {
+        this.savedFlowerPos = null;
+        this.remainingCooldownBeforeLocatingNewFlower = Mth.nextInt(this.bee.getRandom(), 20, 60);
+    }
+
     @Override
     public void tick() {
+        if (this.bee.hasSavedFlowerPos() || this.hasSavedPollenType()) {
+            this.pollinatingTicks++;
+            if (this.pollinatingTicks > 600) {
+                this.dropFlower();
+                this.pollinating = false;
+                this.remainingCooldownBeforeLocatingNewFlower = 200;
+            } else {
+                Vec3 vec3 = Vec3.atBottomCenterOf(this.savedFlowerPos).add(0.0, 0.6F, 0.0);
+                if (vec3.distanceTo(this.bee.position()) > 1.0) {
+                    this.hoverPos = vec3;
+                    this.setWantedPos();
+                } else {
+                    if (this.hoverPos == null) {
+                        this.hoverPos = vec3;
+                    }
 
+                    boolean flag = this.bee.position().distanceTo(this.hoverPos) <= 0.1;
+                    boolean flag1 = true;
+                    if (!flag && this.pollinatingTicks > 600) {
+                        this.pollination.convert(this.server, this.savedFlowerPos, this.pollination.getPlantConversionResult(this.server, BlockPos.containing(this.bee.getX(), this.bee.getY() - 0.6D, this.bee.getZ()), this.savedPollenType));
+                        this.dropFlower();
+                    } else {
+                        if (flag) {
+                            boolean flag2 = this.bee.getRandom().nextInt(25) == 0;
+                            if (flag2) {
+                                this.hoverPos = new Vec3(vec3.x() + this.getOffset(), vec3.y(), vec3.z() + this.getOffset());
+                                ((MobAccessor)this.bee).expandedflowers$getNavigation().stop();
+                            } else {
+                                flag1 = false;
+                            }
+
+                            this.bee.getLookControl().setLookAt(vec3.x(), vec3.y(), vec3.z());
+                        }
+
+                        if (flag1) {
+                            this.setWantedPos();
+                        }
+
+                        this.successfulPollinatingTicks++;
+                        if (this.bee.getRandom().nextFloat() < 0.05F && this.successfulPollinatingTicks > this.lastSoundPlayedTick + 60) {
+                            this.lastSoundPlayedTick = this.successfulPollinatingTicks;
+                            this.bee.playSound(SoundEvents.BEE_POLLINATE, 1.0F, 1.0F);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private void setWantedPos() {
+        this.bee.getMoveControl().setWantedPosition(this.hoverPos.x(), this.hoverPos.y(), this.hoverPos.z(), 0.35F);
+    }
+
+    private float getOffset() {
+        return (bee.getRandom().nextFloat() * 2.0F - 1.0F) * HOVER_POS_OFFSET;
     }
 
     public void tickCooldown() {
@@ -125,7 +188,7 @@ public class ConvertPlantGoal extends Bee.BaseBeeGoal {
             long i = this.unreachableFlowerCache.getOrDefault(blockpos.asLong(), Long.MIN_VALUE);
             if (this.bee.level().getGameTime() < i) {
                 long2longopenhashmap.put(blockpos.asLong(), i);
-            } else if (this.isValidPlantForConversion(this.bee.level().getBlockState(blockpos))) {
+            } else if (this.pollination.canConvert(this.server, this.savedPollenType)) {
                 Path path = ((MobAccessor)this.bee).expandedflowers$getNavigation().createPath(blockpos, 1);
                 if (path != null && path.canReach()) {
                     return Optional.of(blockpos);
@@ -135,22 +198,6 @@ public class ConvertPlantGoal extends Bee.BaseBeeGoal {
         }
         this.unreachableFlowerCache = long2longopenhashmap;
         return Optional.empty();
-    }
-
-    public void convertPlant(BlockPos blockpos, Block block) {
-        this.bee.level().setBlock(blockpos, block.defaultBlockState(), 3);
-    }
-
-    public boolean isValidPlantForConversion(BlockState state) {
-        Holder<Block> holder = state.getBlockHolder();
-        PollinationInfo data = holder.getData(PollinationInfo.POLLINATION_INFO);
-        List<PollinationSet> sets = data.sets();
-        for (PollinationSet set : sets) {
-            if (set.pollinator().equals(this.getSavedPollenType())) {
-                return true;
-            }
-        }
-        return false;
     }
 
     @Nullable

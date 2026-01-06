@@ -130,20 +130,18 @@ public class TriplePlantBlock extends VegetationBlock {
                 level.setBlock(blockpos, blockstate1, 35);
                 level.levelEvent(player, 2001, blockpos, Block.getId(blockstate));
             }
-        } if (segment == TripleBlockSegment.UPPER) {
+        } else if (segment == TripleBlockSegment.UPPER) {
             BlockPos blockpos = pos.below();
+            BlockPos blockposlower = blockpos.below();
             BlockState blockstate = level.getBlockState(blockpos);
-            if (blockstate.is(state.getBlock()) && blockstate.getValue(SEGMENT) == TripleBlockSegment.MIDDLE) {
+            BlockState blockstatelower = level.getBlockState(blockposlower);
+            if (blockstate.is(state.getBlock()) && blockstatelower.is(state.getBlock()) && blockstate.getValue(SEGMENT) == TripleBlockSegment.MIDDLE && blockstatelower.getValue(SEGMENT) == TripleBlockSegment.LOWER) {
                 BlockState blockstate1 = blockstate.getFluidState().is(Fluids.WATER) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
+                BlockState blockstate2 = blockstatelower.getFluidState().is(Fluids.WATER) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
                 level.setBlock(blockpos, blockstate1, 35);
+                level.setBlock(blockposlower, blockstate2, 35);
                 level.levelEvent(player, 2001, blockpos, Block.getId(blockstate));
-                BlockPos blockposdown = blockpos.below();
-                BlockState blockstatedown = level.getBlockState(blockposdown);
-                if (blockstatedown.is(state.getBlock()) && blockstatedown.getValue(SEGMENT) == TripleBlockSegment.LOWER) {
-                    BlockState blockstate2 = blockstatedown.getFluidState().is(Fluids.WATER) ? Blocks.WATER.defaultBlockState() : Blocks.AIR.defaultBlockState();
-                    level.setBlock(blockposdown, blockstate2, 35);
-                    level.levelEvent(player, 2001, blockposdown, Block.getId(blockstatedown));
-                }
+                level.levelEvent(player, 2001, blockposlower, Block.getId(blockstatelower));
             }
         }
     }

@@ -5,6 +5,7 @@ import com.donaldduckith.expandedflowers.registry.ModBlocks;
 import com.donaldduckith.expandedflowers.registry.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
 
 import java.util.concurrent.CompletableFuture;
@@ -24,6 +25,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.WHITE_BOTTLEBRUSH_END.asItem())
                 .add(ModBlocks.WHITE_CHRYSANTHEMUM.asItem())
                 .add(ModBlocks.WHITE_CLEMATIS.asItem())
+                .add(ModBlocks.WHITE_FIRE_LILY.asItem())
                 .add(ModBlocks.WHITE_GREVILLEA.asItem())
                 .add(ModBlocks.WHITE_HELLEBORE.asItem())
                 .add(ModBlocks.WHITE_HYDRANGEA.asItem())
@@ -56,6 +58,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.RED_BOTTLEBRUSH_END.asItem())
                 .add(ModBlocks.RED_CHRYSANTHEMUM.asItem())
                 .add(ModBlocks.RED_CLEMATIS.asItem())
+                .add(ModBlocks.RED_FIRE_LILY.asItem())
                 .add(ModBlocks.RED_GREVILLEA.asItem())
                 .add(ModBlocks.RED_HELLEBORE.asItem())
                 .add(ModBlocks.RED_HYDRANGEA.asItem())
@@ -69,6 +72,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.ORANGE_BOTTLEBRUSH.asItem())
                 .add(ModBlocks.ORANGE_BOTTLEBRUSH_END.asItem())
                 .add(ModBlocks.ORANGE_CHRYSANTHEMUM.asItem())
+                .add(ModBlocks.ORANGE_FIRE_LILY.asItem())
                 .add(ModBlocks.ORANGE_GREVILLEA.asItem())
                 .add(ModBlocks.ORANGE_ORCHID.asItem())
                 .add(ModBlocks.ORANGE_PANSY.asItem())
@@ -82,6 +86,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.YELLOW_BOTTLEBRUSH_END.asItem())
                 .add(ModBlocks.YELLOW_CHRYSANTHEMUM.asItem())
                 .add(ModBlocks.YELLOW_CLEMATIS.asItem())
+                .add(ModBlocks.YELLOW_FIRE_LILY.asItem())
                 .add(ModBlocks.YELLOW_GREVILLEA.asItem())
                 .add(ModBlocks.YELLOW_HELLEBORE.asItem())
                 .add(ModBlocks.YELLOW_HYDRANGEA.asItem())
@@ -119,6 +124,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.PURPLE_BABIANA.asItem())
                 .add(ModBlocks.PURPLE_CHRYSANTHEMUM.asItem())
                 .add(ModBlocks.PURPLE_CLEMATIS.asItem())
+                .add(ModBlocks.PURPLE_FIRE_LILY.asItem())
                 .add(ModBlocks.PURPLE_HELLEBORE.asItem())
                 .add(ModBlocks.PURPLE_HYDRANGEA.asItem())
                 .add(ModBlocks.PURPLE_ORCHID.asItem())
@@ -134,6 +140,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.MAGENTA_BOTTLEBRUSH_END.asItem())
                 .add(ModBlocks.MAGENTA_CHRYSANTHEMUM.asItem())
                 .add(ModBlocks.MAGENTA_CLEMATIS.asItem())
+                .add(ModBlocks.MAGENTA_FIRE_LILY.asItem())
                 .add(ModBlocks.MAGENTA_GREVILLEA.asItem())
                 .add(ModBlocks.MAGENTA_HELLEBORE.asItem())
                 .add(ModBlocks.MAGENTA_HYDRANGEA.asItem())
@@ -149,6 +156,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModBlocks.PINK_BOTTLEBRUSH_END.asItem())
                 .add(ModBlocks.PINK_CHRYSANTHEMUM.asItem())
                 .add(ModBlocks.PINK_CLEMATIS.asItem())
+                .add(ModBlocks.PINK_FIRE_LILY.asItem())
                 .add(ModBlocks.PINK_HELLEBORE.asItem())
                 .add(ModBlocks.PINK_HYDRANGEA.asItem())
                 .add(ModBlocks.PINK_ORCHID.asItem())

@@ -10,6 +10,7 @@ import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.neoforged.fml.common.Mod;
 
 import java.util.Set;
 
@@ -32,6 +33,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.WHITE_BOUGAINVILLEA_SAPLING.get());
         dropSelf(ModBlocks.WHITE_CHRYSANTHEMUM.get());
         dropSelf(ModBlocks.WHITE_CLEMATIS.get());
+        dropSelf(ModBlocks.WHITE_FIRE_LILY.get());
         this.add(ModBlocks.WHITE_FOXGLOVE.get(), property -> this.createSinglePropConditionTable(property, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         dropSelf(ModBlocks.WHITE_GREVILLEA.get());
         dropSelf(ModBlocks.WHITE_HELLEBORE.get());
@@ -71,6 +73,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.RED_BOUGAINVILLEA_SAPLING.get());
         dropSelf(ModBlocks.RED_CHRYSANTHEMUM.get());
         dropSelf(ModBlocks.RED_CLEMATIS.get());
+        dropSelf(ModBlocks.RED_FIRE_LILY.get());
         dropSelf(ModBlocks.RED_GREVILLEA.get());
         dropSelf(ModBlocks.RED_HELLEBORE.get());
         this.add(ModBlocks.RED_HOLLYHOCK.get(), property -> this.createSinglePropConditionTable(property, TriplePlantBlock.SEGMENT, TripleBlockSegment.LOWER));
@@ -88,6 +91,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.ORANGE_BOTTLEBRUSH_SAPLING.get());
         dropSelf(ModBlocks.ORANGE_BOUGAINVILLEA_SAPLING.get());
         dropSelf(ModBlocks.ORANGE_CHRYSANTHEMUM.get());
+        dropSelf(ModBlocks.ORANGE_FIRE_LILY.get());
         dropSelf(ModBlocks.ORANGE_GREVILLEA.get());
         dropSelf(ModBlocks.ORANGE_ORCHID.get());
         dropSelf(ModBlocks.ORANGE_PANSY.get());
@@ -104,6 +108,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.YELLOW_BOUGAINVILLEA_SAPLING.get());
         dropSelf(ModBlocks.YELLOW_CLEMATIS.get());
         dropSelf(ModBlocks.YELLOW_CHRYSANTHEMUM.get());
+        dropSelf(ModBlocks.YELLOW_FIRE_LILY.get());
         this.add(ModBlocks.YELLOW_FOXGLOVE.get(), property -> this.createSinglePropConditionTable(property, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         dropSelf(ModBlocks.YELLOW_GREVILLEA.get());
         dropSelf(ModBlocks.YELLOW_HELLEBORE.get());
@@ -145,6 +150,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.PURPLE_BOUGAINVILLEA_SAPLING.get());
         dropSelf(ModBlocks.PURPLE_CHRYSANTHEMUM.get());
         dropSelf(ModBlocks.PURPLE_CLEMATIS.get());
+        dropSelf(ModBlocks.PURPLE_FIRE_LILY.get());
         this.add(ModBlocks.PURPLE_FOXGLOVE.get(), property -> this.createSinglePropConditionTable(property, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         dropSelf(ModBlocks.PURPLE_HELLEBORE.get());
         dropSelf(ModBlocks.PURPLE_HYDRANGEA.get());
@@ -165,6 +171,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.MAGENTA_BOUGAINVILLEA_SAPLING.get());
         dropSelf(ModBlocks.MAGENTA_CHRYSANTHEMUM.get());
         dropSelf(ModBlocks.MAGENTA_CLEMATIS.get());
+        dropSelf(ModBlocks.MAGENTA_FIRE_LILY.get());
         this.add(ModBlocks.MAGENTA_FOXGLOVE.get(), property -> this.createSinglePropConditionTable(property, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         dropSelf(ModBlocks.MAGENTA_GREVILLEA.get());
         dropSelf(ModBlocks.MAGENTA_HELLEBORE.get());
@@ -186,6 +193,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.PINK_BOUGAINVILLEA_SAPLING.get());
         dropSelf(ModBlocks.PINK_CHRYSANTHEMUM.get());
         dropSelf(ModBlocks.PINK_CLEMATIS.get());
+        dropSelf(ModBlocks.PINK_FIRE_LILY.get());
         this.add(ModBlocks.PINK_FOXGLOVE.get(), property -> this.createSinglePropConditionTable(property, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         dropSelf(ModBlocks.PINK_HELLEBORE.get());
         this.add(ModBlocks.PINK_HOLLYHOCK.get(), property -> this.createSinglePropConditionTable(property, TriplePlantBlock.SEGMENT, TripleBlockSegment.LOWER));

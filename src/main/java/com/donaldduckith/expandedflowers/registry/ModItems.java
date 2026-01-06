@@ -1,11 +1,16 @@
 package com.donaldduckith.expandedflowers.registry;
 
 import com.donaldduckith.expandedflowers.ExpandedFlowers;
+import com.donaldduckith.expandedflowers.item.ModBrushItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -13,6 +18,9 @@ import java.util.function.Supplier;
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(ExpandedFlowers.MODID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ExpandedFlowers.MODID);
+
+    public static final DeferredItem<ModBrushItem> POLLEN_BRUSH = ITEMS.register("pollen_brush",
+            () -> new ModBrushItem(new Item.Properties().durability(64).setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ExpandedFlowers.MODID, "pollen_brush")))));
 
     public static final Supplier<CreativeModeTab> EXPANDED_FLOWERS_TAB = CREATIVE_MODE_TAB.register("expandedflowers_tab",
             () -> new CreativeModeTab.Builder(CreativeModeTab.Row.TOP, 1)
@@ -103,6 +111,14 @@ public class ModItems {
                         output.accept(ModBlocks.PURPLE_CLEMATIS);
                         output.accept(ModBlocks.MAGENTA_CLEMATIS);
                         output.accept(ModBlocks.PINK_CLEMATIS);
+
+                        output.accept(ModBlocks.WHITE_FIRE_LILY);
+                        output.accept(ModBlocks.RED_FIRE_LILY);
+                        output.accept(ModBlocks.ORANGE_FIRE_LILY);
+                        output.accept(ModBlocks.YELLOW_FIRE_LILY);
+                        output.accept(ModBlocks.PURPLE_FIRE_LILY);
+                        output.accept(ModBlocks.MAGENTA_FIRE_LILY);
+                        output.accept(ModBlocks.PINK_FIRE_LILY);
 
                         output.accept(ModBlocks.FOXGLOVE_BUSH);
                         output.accept(ModBlocks.WHITE_FOXGLOVE);

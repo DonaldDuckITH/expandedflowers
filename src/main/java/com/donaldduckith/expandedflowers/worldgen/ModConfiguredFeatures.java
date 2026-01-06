@@ -2,10 +2,14 @@ package com.donaldduckith.expandedflowers.worldgen;
 
 import com.donaldduckith.expandedflowers.ExpandedFlowers;
 import com.donaldduckith.expandedflowers.registry.ModBlocks;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.features.FeatureUtils;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -13,18 +17,24 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.AcaciaFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BushFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.NoiseProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.NoiseThresholdProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
+import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
+import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
+import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import org.spongepowered.include.com.google.common.collect.ImmutableList;
+
+import java.util.List;
 
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> WHITE_WATTLE_KEY = registerKey("white_wattle");
@@ -45,6 +55,15 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?,?>> PURPLE_BOUGAINVILLEA_KEY = registerKey("purple_bougainvillea");
     public static final ResourceKey<ConfiguredFeature<?,?>> MAGENTA_BOUGAINVILLEA_KEY = registerKey("magenta_bougainvillea");
     public static final ResourceKey<ConfiguredFeature<?,?>> PINK_BOUGAINVILLEA_KEY = registerKey("pink_bougainvillea");
+
+    public static final ResourceKey<ConfiguredFeature<?,?>> FOREST_FLOWERS_KEY = registerKey("forest_flowers");
+    public static final ResourceKey<ConfiguredFeature<?,?>> DARK_FOREST_FLOWERS_KEY = registerKey("dark_forest_flowers");
+    public static final ResourceKey<ConfiguredFeature<?,?>> PLAIN_FLOWERS_KEY = registerKey("plain_flowers");
+    public static final ResourceKey<ConfiguredFeature<?,?>> JUNGLE_FLOWERS_KEY = registerKey("jungle_flowers");
+    public static final ResourceKey<ConfiguredFeature<?,?>> SAVANNA_FLOWERS_KEY = registerKey("savanna_flowers");
+    public static final ResourceKey<ConfiguredFeature<?,?>> MEADOW_FLOWERS_KEY = registerKey("meadow_flowers");
+    public static final ResourceKey<ConfiguredFeature<?,?>> TULIPS_KEY = registerKey("tulips");
+
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         register(context, WHITE_WATTLE_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
@@ -231,6 +250,183 @@ public class ModConfiguredFeatures {
                 new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2),
                 new TwoLayersFeatureSize(0, 0, 0))
                 .build());
+
+        register(context, TULIPS_KEY, Feature.FLOWER, new RandomPatchConfiguration(
+                96,
+                6,
+                2,
+                PlacementUtils.onlyWhenEmpty(
+                        Feature.SIMPLE_BLOCK,
+                        new SimpleBlockConfiguration(
+                                new NoiseProvider(
+                                        2345L,
+                                        new NormalNoise.NoiseParameters(0, 1.0),
+                                        0.020833334F,
+                                        List.of(
+                                                ModBlocks.BLACK_TULIP.get().defaultBlockState(),
+                                                ModBlocks.YELLOW_TULIP.get().defaultBlockState(),
+                                                ModBlocks.PURPLE_TULIP.get().defaultBlockState(),
+                                                ModBlocks.MAGENTA_TULIP.get().defaultBlockState()
+                                        )
+                                )
+                        )
+                )
+        ));
+
+        register(
+                context,
+                FOREST_FLOWERS_KEY,
+                Feature.SIMPLE_RANDOM_SELECTOR,
+                new SimpleRandomFeatureConfiguration(
+                        HolderSet.direct(
+                                PlacementUtils.inlinePlaced(
+                                        Feature.RANDOM_PATCH,
+                                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WHITE_LILAC.get())))
+                                ),
+                                PlacementUtils.inlinePlaced(
+                                        Feature.RANDOM_PATCH,
+                                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.PURPLE_LILAC.get())))
+                                ),
+                                PlacementUtils.inlinePlaced(
+                                        Feature.RANDOM_PATCH,
+                                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.PINK_LILAC.get())))
+                                ),
+                                PlacementUtils.inlinePlaced(
+                                        Feature.RANDOM_PATCH,
+                                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.ORANGE_ORCHID.get()))
+                                        )
+                                ),
+                                PlacementUtils.inlinePlaced(
+                                        Feature.RANDOM_PATCH,
+                                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WHITE_PEONY.get()))
+                                        )
+                                ),
+                                PlacementUtils.inlinePlaced(
+                                        Feature.RANDOM_PATCH,
+                                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.MAGENTA_PEONY.get()))
+                                        )
+                                ),
+                                PlacementUtils.inlinePlaced(
+                                        Feature.RANDOM_PATCH,
+                                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WHITE_ROSE_BUSH.get()))
+                                        )
+                                ),
+                                PlacementUtils.inlinePlaced(
+                                        Feature.RANDOM_PATCH,
+                                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.PINK_ROSE_BUSH.get()))
+                                        )
+                                )
+                        )
+                )
+        );
+
+        register(
+                context,
+                DARK_FOREST_FLOWERS_KEY,
+                Feature.SIMPLE_RANDOM_SELECTOR,
+                new SimpleRandomFeatureConfiguration(
+                        HolderSet.direct(
+                                PlacementUtils.inlinePlaced(
+                                        Feature.RANDOM_PATCH,
+                                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.LIME_ROSE_BUSH.get())))
+                                ),
+                                PlacementUtils.inlinePlaced(
+                                        Feature.RANDOM_PATCH,
+                                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WHITE_ORCHID.get())))
+                                )
+                        )
+                )
+        );
+
+        register(
+                context,
+                JUNGLE_FLOWERS_KEY,
+                Feature.SIMPLE_RANDOM_SELECTOR,
+                new SimpleRandomFeatureConfiguration(
+                        HolderSet.direct(
+                                PlacementUtils.inlinePlaced(
+                                        Feature.RANDOM_PATCH,
+                                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.PINK_ORCHID.get())))
+                                )
+                        )
+                )
+        );
+
+        register(
+                context,
+                SAVANNA_FLOWERS_KEY,
+                Feature.SIMPLE_RANDOM_SELECTOR,
+                new SimpleRandomFeatureConfiguration(
+                        HolderSet.direct(
+                                PlacementUtils.inlinePlaced(
+                                        Feature.RANDOM_PATCH,
+                                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.ORANGE_POPPY.get())))
+                                ),
+                                PlacementUtils.inlinePlaced(
+                                        Feature.RANDOM_PATCH,
+                                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.YELLOW_POPPY.get())))
+                                ),
+                                PlacementUtils.inlinePlaced(
+                                        Feature.RANDOM_PATCH,
+                                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.YELLOW_ROSE_BUSH.get())))
+                                )
+                        )
+                )
+        );
+
+        register(
+                context,
+                MEADOW_FLOWERS_KEY,
+                Feature.SIMPLE_RANDOM_SELECTOR,
+                new SimpleRandomFeatureConfiguration(
+                        HolderSet.direct(
+                                PlacementUtils.inlinePlaced(
+                                        Feature.RANDOM_PATCH,
+                                        FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.CYAN_OXEYE_DAISY.get())))
+                                )
+                        )
+                )
+        );
+
+        register(
+                context,
+                PLAIN_FLOWERS_KEY,
+                Feature.FLOWER,
+                new RandomPatchConfiguration(
+                        64,
+                        6,
+                        2,
+                        PlacementUtils.onlyWhenEmpty(
+                                Feature.SIMPLE_BLOCK,
+                                new SimpleBlockConfiguration(
+                                        new NoiseThresholdProvider(
+                                                2345L,
+                                                new NormalNoise.NoiseParameters(0, 1.0),
+                                                0.005F,
+                                                -0.8F,
+                                                0.33333334F,
+                                                Blocks.DANDELION.defaultBlockState(),
+                                                List.of(
+                                                        Blocks.WHITE_TULIP.defaultBlockState(),
+                                                        Blocks.PINK_TULIP.defaultBlockState(),
+                                                        Blocks.RED_TULIP.defaultBlockState(),
+                                                        Blocks.ORANGE_TULIP.defaultBlockState(),
+                                                        ModBlocks.YELLOW_TULIP.get().defaultBlockState(),
+                                                        ModBlocks.MAGENTA_TULIP.get().defaultBlockState()
+                                                ),
+                                                List.of(
+                                                        Blocks.POPPY.defaultBlockState(),
+                                                        Blocks.AZURE_BLUET.defaultBlockState(),
+                                                        ModBlocks.LIGHT_BLUE_AZURE_BLUET.get().defaultBlockState(),
+                                                        ModBlocks.ORANGE_POPPY.get().defaultBlockState(),
+                                                        ModBlocks.YELLOW_POPPY.get().defaultBlockState()
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

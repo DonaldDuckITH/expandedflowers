@@ -3,27 +3,22 @@ package com.donaldduckith.expandedflowers;
 import com.donaldduckith.expandedflowers.registry.ModBlocks;
 import com.donaldduckith.expandedflowers.registry.ModDataComponents;
 import com.donaldduckith.expandedflowers.registry.ModItems;
-import com.donaldduckith.expandedflowers.registry.pollination.PollinationInfo;
 import com.donaldduckith.expandedflowers.worldgen.ModTreeDecoratorType;
-import com.donaldduckith.expandedflowers.worldgen.ModVineDecorator;
+import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.neoforged.neoforge.registries.datamaps.RegisterDataMapTypesEvent;
-import org.slf4j.Logger;
-
-import com.mojang.logging.LogUtils;
-
-import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(ExpandedFlowers.MODID)
@@ -76,6 +71,8 @@ public class ExpandedFlowers {
             insertAfter(event, Items.LILAC.getDefaultInstance(), ModBlocks.WHITE_LILAC.asItem().getDefaultInstance(), ModBlocks.PURPLE_LILAC.asItem().getDefaultInstance(),
                     ModBlocks.PINK_LILAC.asItem().getDefaultInstance());
             insertAfter(event, Items.AZURE_BLUET.getDefaultInstance(), ModBlocks.LIGHT_BLUE_AZURE_BLUET.asItem().getDefaultInstance());
+        } else if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            insertAfter(event, Items.BRUSH.getDefaultInstance(), ModItems.POLLEN_BRUSH.asItem().getDefaultInstance());
         }
     }
 
